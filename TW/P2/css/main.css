@@ -25,13 +25,10 @@ body {
 	font-size: 1em;
 	max-width: 990px;
 	display: block;
-	padding: .125em auto;
+	/*overflow: hidden;*/
 	margin: 0 auto;
 	text-align: center;
 	
-}
-body *{
-	display: block;
 }
 
 img{
@@ -40,16 +37,56 @@ img{
 }
 
 #container{
-	box-sizing: border-box;
+	position: relative;
   	width: 100%;
 	background: #FFFFFF;
+	margin: 0 auto;
+	margin-top: 0;
+
 }
 #header {
 	background: #FFFFFF;
-	margin-top: .125em;
 	border-bottom: solid 10px #000000;
+	display: inline-block;
 }	
 
-#nav-menu{
-	display: inline;
+
+#nav-menu{		
+	position: relative;
+	list-style-type: none;
+	background: #1C1F23;
+	/*vertical-align: bottom;*/
+}
+
+#nav-menu ul{
+
+	/*padding: 0;*/
+	
+	font-size: 1.5em;
+	height: inherit;
+	/*list-style-type: none;
+	font-size: 1em;
+	min-height: inherit;
+	margin: 0 auto;
+	padding: 0 auto;*/
+
+}
+
+#nav-menu li{
+	display:inline;
+	
+	float: left;
+	text-transform: uppercase;
+
+	padding: .125em .5em;
+
+}
+
+
+#responsive-menu li a {
+	display: block;
+	color: #FFF;
+	width: 100%;
+	line-height: 60px;
+	padding: 0 26px;
 }
