@@ -22,11 +22,33 @@ body {
 	background-color: #c2f3c2;
 	color: #000000;
 	font-family: "dosismedium", Helvetica, Verdana;
-	font-size: 1.25em;
-	max-width: 960px;
+	font-size: 1em;
+	max-width: 990px;
 	display: block;
 	padding: .125em auto;
 	margin: 0 auto;
 	text-align: center;
 	
+}
+body *{
+	display: block;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+#container{
+	box-sizing: border-box;
+  	width: 100%;
+	background: #FFFFFF;
+}
+#header {
+	margin-top: .125em;
+	border-bottom: solid 10px #000000;
+}	
+#header{
+	background: #F7F7F7;
+	/*min-height: 2em;*/
 }
