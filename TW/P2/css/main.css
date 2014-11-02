@@ -19,7 +19,7 @@ header, section, footer, aside, nav, article, figure, figcaption, hgroup {
 /*16px = 12pt = 100% = 1em*/	
 body {
 	background-image: url('../img/grill-960.png');
-	background-color: #c2f3c2;
+	background-color: #F7F7F7;
 	color: #000000;
 	font-family: "dosismedium", Helvetica, Verdana;
 	font-size: 1em;
@@ -45,10 +45,11 @@ img{
 	background: #FFFFFF;
 }
 #header {
+	background: #FFFFFF;
 	margin-top: .125em;
 	border-bottom: solid 10px #000000;
 }	
-#header{
-	background: #F7F7F7;
-	/*min-height: 2em;*/
+
+#nav-menu{
+	display: inline;
 }
