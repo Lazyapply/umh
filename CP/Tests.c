@@ -10,7 +10,7 @@ int main (argc, argv)
      int argc;
      char *argv[];
 {
-  int rank, size;
+  int rank, size;//  saf
 
   MPI_Init (&argc, &argv);	/* starts MPI */
   MPI_Comm_rank (MPI_COMM_WORLD, &rank);	/* get current process id */
