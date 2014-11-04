@@ -50,31 +50,45 @@ img{
 	display: inline-block;	
 }	
 
+#nav-menu, #nav-menu ul{
+	height: 68px;
+	padding-left: 0;
+}
 
 #nav-menu *{		
 	list-style-type: none;
 	text-decoration: none;
 	display: inline-block;
 	/*min-height: auto;*/
-	margin: 0;
-	padding: 0;
+	/*margin: 0;*/
+	/*padding: 0;*/
+	
 }
+
+
+
 
 #nav-menu ul {
 	display: block;
-	margin: 0;
-	padding: 0;
 	font-size: 2em;
-}
-
-#nav-menu li {
-
-	background: #CFCFCF;
+	padding: .5em 0;
+	margin: 0 0;
 	vertical-align: middle;
-	width: auto;
 }
 
+#nav-menu ul li {
+	
+	background: #CFCFCF;
+	
+	/*width: auto;*/
+	
+}
+
+#nav-memu li a {
+	padding-top: .5em;
+}
 
 #nav-menu li a:hover {
 	background: #0000FF;
+	height: auto;
 }
