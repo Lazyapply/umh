@@ -43,8 +43,9 @@ body {
 	vertical-align: bottom;
 }
 
-img{
+#header img{
 	float: left;
+	padding-top: .5em;
 	max-width: 100%;
 	height: auto;
 }
