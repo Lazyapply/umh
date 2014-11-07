@@ -18,17 +18,15 @@ header, section, footer, aside, nav, article, figure, figcaption, hgroup {
 
 /*16px = 12pt = 100% = 1em*/	
 body {
-	background-image: url('../img/grill-960.png');
+	/*background-image: url('../img/grill-960.png');*/
 	background-color: #F7F7F7;
 	color: #000000;
 	font-family: "dosismedium", Helvetica, Verdana;
 	font-size: 1.25em;
 	max-width: 960px;
 	display: block;
-	/*padding: 0 auto;*/
 	margin: 0 auto;
 	text-align: center;
-	/*margin-bottom: 0;*/
 	
 }
 
@@ -36,12 +34,12 @@ body {
 	background: #C4C4C4;
 	width: 100%;
 	margin: 0 auto;
-	/*margin-top: 0;*/
+
 }
 
 #header {
 	width: 100%;
-	background: #C4C4C4;
+	background: #004192;
 	vertical-align: bottom;
 }
 
@@ -49,23 +47,19 @@ img{
 	float: left;
 	max-width: 100%;
 	height: auto;
-	/*vertical-align: top;*/
 }
 
 #nav-menu {
 	float: left;
-	background: #FFF;
-	/*height: 64px;*/
 	margin: 0;
 	padding: 0;
-	
 }
 
 #nav-menu ul {
 	margin: 0;
 	padding: 0;
+	margin-left: .125em;
 	float: right;
-	/*padding: 0;*/
 	list-style-type: none;
 	font-size: 1.5em;
 	height: 64px;
@@ -81,14 +75,23 @@ img{
 	text-align: center;
 	margin: 0;
 	padding-right: .04em;
-	height: 64px;
-	/*vertical-align: middle;*/
 }
 
 #nav-menu li a{
 	display: block;
 	text-decoration: none;
-	background: #2CC559;
+	font-weight: bold;
+	background: #004192;
 	line-height: 64px;
-	padding: 0 1em;
+	padding: 0 .5em;
+	color: #FFF;
+	border-right: 2px solid #fff;
+}
+
+#nav-menu ul li:last-child a{
+	border-right: none;
+}
+#nav-menu li a:hover{
+	background: #3666B6;
+	font-size: 1.25em;
 }
