@@ -7,9 +7,7 @@ html {
 }
 
 
-body {
-  margin: 0;
-}
+
 
 
 /*
@@ -78,8 +76,8 @@ strong {
 .x-11, .m-11, .l-11, .x-12, .m-12, .l-12 {
   position: relative;
   min-height: 1px;
-  padding-right: .125em;
-  padding-left: .125em;
+  /*padding-right: .125em;*/
+  /*padding-left: .125em;*/
 }
 .x-1, .x-2, .x-3, .x-4, .x-5, .x-6, .x-7, .x-8, .x-9, .x-10, .x-11, .x-12 {
   float: left;
@@ -114,8 +112,7 @@ strong {
   .m-10 { width: 83.33333333%;  }
   .m-9 { width: 75%;  }
   .m-8 { width: 66.66666667%;  }
-  .m-7 { width: 58.33333333%;
-  }
+  .m-7 { width: 58.33333333%;  }
   .m-6 { width: 50%;  }
   .m-5 { width: 41.66666667%;  }
   .m-4 { width: 33.33333333%;  }
