@@ -46,7 +46,7 @@ body {
 	vertical-align: bottom;
 }
 
-#header img{
+img{
 	float: left;
 	padding-top: .5em;
 	max-width: 100%;
@@ -177,7 +177,7 @@ li > a{
 
 #breadcumbs ul li:after {
 	font-size: 1.25em;
-	text-weight: bold;
+	font-weight: bold;
 	content: ">>";
 	/*z-index: 1;*/
 }
@@ -214,12 +214,16 @@ li > a{
 
 
 #content {
-	margin-top: 1.5em;
+	/*margin-top: .1em;*/
 }
 
-
+/*450x380*/
 .panel {
-	border: 5px solid #000;
-	background: #B4B4B4;
+	margin-top: 1em;
+	border-right: 3px solid #004192;
+	border-left: 3px solid #004192;
+	background: #FFF;
 	min-height: 100px;
 }
+
+/*TODO: hacer la clase panel-text*/
