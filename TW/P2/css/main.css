@@ -19,7 +19,7 @@ header, section, footer, aside, nav, article, figure, figcaption, hgroup {
 /*16px = 12pt = 100% = 1em*/	
 body {
 	/*background-image: url('../img/grill-960.png');*/
-	background-color: #F7F7F7;
+	background-color: #DDE7F3;
 	color: #000000;
 	font-family: "dosismedium", Helvetica, Verdana;
 	font-size: 1.25em;
@@ -27,11 +27,12 @@ body {
 	display: block;
 	margin: 0 auto;
 	text-align: center;
+	overflow: hidden;
 	
 }
 
 #container {
-	background: #C4C4C4;
+	/*background: #C4C4C4;*/
 	width: 100%;
 	margin: 0 auto;
 
@@ -59,6 +60,7 @@ li > a{
 	float: left;
 	margin: 0;
 	padding: 0;
+	border-bottom: 2px solid #000;
 }
 
 #nav-menu ul {
@@ -91,14 +93,14 @@ li > a{
 	line-height: 64px;
 	padding: 0 .5em;
 	color: #FFF;
-	border-right: 2px solid #fff;
+	border-right: 2px solid #000;
 }
 
 /*#nav-menu ul li:last-child a{*/
 	/*border-right: none;*/
 /*}*/
 #nav-menu li a:hover{
-	/*background: #3666B6;*/
+	background: #FCFCFC;
 	color: #E18E08;
 }
 
@@ -112,7 +114,7 @@ li > a{
 	padding: 0;
 	opacity: 0;
 	position: absolute;
-	width: auto;
+	width: 17.5em;
 	visibility: hidden;
 	z-index: 100;
 
@@ -121,6 +123,7 @@ li > a{
 	-ms-transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
 	transition: opacity 0.2s;
+	/*background: #000;*/
 }
 
 #nav-menu li:hover .submenu{
@@ -129,14 +132,86 @@ li > a{
 	display: block;
 	opacity: 1;
 	visibility: visible;
+	/*background: #FCFCFC;*/
 }
 
 #nav-menu li:hover .submenu ul li{
 	display: block;
-	padding-top: .5em;
+	padding-top: .25em;
 
-	/*position: absolute;*/
-	/*margin-left: 0;*/
 	width: 74.75%;
 }
 
+
+#content {
+	margin-top: 3em;
+}
+
+.panel {
+	border: 5px solid #000;
+	background: #B4B4B4;
+	min-height: 100px;
+}
+
+#breadcumbs *{
+	text-decoration: none;
+	list-style-type: none;
+	font-size: .9em;
+	text-align: left;
+
+	/*width: auto;*/
+}
+
+#breadcumbs li{
+	display: inline;
+}
+
+#breadcumbs ul {
+	background: #be7600;
+}
+
+#breadcumbs li a {
+	color: #000;
+	content: "Joe's Task: ";
+	padding-right: .5em;
+
+}
+
+#breadcumbs li a:hover {
+	color: #FFF;
+}
+
+#breadcumbs ul li:after {
+	font-size: 1.25em;
+	text-weight: bold;
+	content: ">>";
+	/*z-index: 1;*/
+}
+
+
+
+.search-bar {
+	margin: 0;
+	padding: 0;
+	margin-top: .95em;
+	text-decoration: none;
+	list-style-type: none;
+	font-size: .9em;
+	text-align: left;
+
+	/*width: auto;*/
+}
+.search-icon{
+	padding: 0;
+	margin: 0;
+	background: #004192;
+}
+.search-icon{
+	margin-left: .125em;
+	/*vertical-align: middle;*/
+    /*content: url('../img/search-icon.png') no-repeat top left;*/
+	width: 20px;
+	height: auto;
+}
+
+button { border:0;}
