@@ -16,6 +16,8 @@ header, section, footer, aside, nav, article, figure, figcaption, hgroup {
 	display: block;
 }
 
+button { border:0;}
+
 /*16px = 12pt = 100% = 1em*/	
 body {
 	/*background-image: url('../img/grill-960.png');*/
@@ -143,15 +145,7 @@ li > a{
 }
 
 
-#content {
-	margin-top: 3em;
-}
 
-.panel {
-	border: 5px solid #000;
-	background: #B4B4B4;
-	min-height: 100px;
-}
 
 #breadcumbs *{
 	text-decoration: none;
@@ -167,18 +161,18 @@ li > a{
 }
 
 #breadcumbs ul {
-	background: #be7600;
+	vertical-align: middle;
+	background: #015bcf;
 }
 
 #breadcumbs li a {
-	color: #000;
-	content: "Joe's Task: ";
+	color: #FFF;
 	padding-right: .5em;
 
 }
 
 #breadcumbs li a:hover {
-	color: #FFF;
+	color: #E18E08;
 }
 
 #breadcumbs ul li:after {
@@ -186,6 +180,10 @@ li > a{
 	text-weight: bold;
 	content: ">>";
 	/*z-index: 1;*/
+}
+
+#breadcumbs ul li:last-child:after {
+	content: none;
 }
 
 
@@ -214,4 +212,14 @@ li > a{
 	height: auto;
 }
 
-button { border:0;}
+
+#content {
+	margin-top: 1.5em;
+}
+
+
+.panel {
+	border: 5px solid #000;
+	background: #B4B4B4;
+	min-height: 100px;
+}
