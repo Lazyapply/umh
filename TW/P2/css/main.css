@@ -168,6 +168,7 @@ li > a{
 #breadcumbs li a {
 	color: #FFF;
 	padding-right: .5em;
+	padding-left: .5em;
 
 }
 
@@ -178,7 +179,7 @@ li > a{
 #breadcumbs ul li:after {
 	font-size: 1.25em;
 	font-weight: bold;
-	content: ">>";
+	content: "\00BB";
 	/*z-index: 1;*/
 }
 
