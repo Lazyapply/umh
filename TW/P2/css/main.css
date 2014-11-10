@@ -220,11 +220,20 @@ li > a{
 
 /*450x380*/
 .panel {
+
 	margin-top: 1em;
 	border-right: 3px solid #004192;
 	border-left: 3px solid #004192;
 	background: #FFF;
 	min-height: 100px;
 }
+.panel-text * {
+	text-decoration: none;
+	list-style-type: none;
+	color: #000;
+}
 
-/*TODO: hacer la clase panel-text*/
+.panel-text {
+	margin: auto 1em;
+	padding-right: 1em;
+}
