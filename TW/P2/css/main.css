@@ -18,6 +18,8 @@ header, section, footer, aside, nav, article, figure, figcaption, hgroup {
 
 button { border:0;}
 
+
+
 /*16px = 12pt = 100% = 1em*/	
 body {
 	background-color: #DDE7F3;
@@ -58,12 +60,15 @@ li > a{
 	margin:0;
 }
 
+
+
 #nav-menu {
 	float: left;
 	margin: 0;
 	padding: 0;
 	border-bottom: 2px solid #000;
 }
+
 
 #nav-menu ul {
 	margin: 0;
@@ -75,6 +80,19 @@ li > a{
 	height: 64px;
 
 
+}
+
+.last{
+	position: relative;
+	right: -65px;
+}
+
+#nav-menu .submenu ul li:first-child {
+	border-top: 5px solid #000;
+}
+
+#nav-menu .submenu ul li a{
+	border-left: 2px solid #000;
 }
 
 #nav-menu li {
@@ -96,6 +114,7 @@ li > a{
 	padding: 0 .5em;
 	color: #FFF;
 	border-right: 2px solid #000;
+
 }
 
 #nav-menu li a:hover{
@@ -193,7 +212,6 @@ li > a{
 	background: #004192;
 }
 .search-icon{
-	margin-left: .125em;
 	width: 20px;
 	height: auto;
 }
@@ -251,9 +269,51 @@ li > a{
 	color: #E18E08;
 }
 
+
+#nav-responsive{
+	display: none;
+	margin-top: .5em;
+	background: url(../img/search-icon.png) no-repeat 5px 10px;
+	text-decoration: none;
+	float: right;
+	width: 80px;
+	height: 80px;
+	/*position: absolute;*/
+	/*right: 0;*/
+	/*left: 0;*/
+	opacity: .6;
+	z-index: 10;
+}
+
+#nav-responsive.nav-active{
+opacity: 1;
+}
+
 /*tablets*/
 @media (max-width: 728px){
-	#nav-menu ul{
-		/*display: none;*/
+	#nav-menu {
+		border-bottom: none;
+		font-size: .65em;
+		float: none;
+	}
+	
+	#nav-responsive {
+
+	}
+
+	.last{
+		position: relative;
+		right: -40px;
+	}
+	#nav-responsive {
+		display: block;
+	}
+
+	#nav-responsive ul {
+		width: 100%;
+	}
+	
+	.search-bar, .search-icon {
+		display: none;
 	}
 }
