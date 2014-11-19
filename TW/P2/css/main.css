@@ -289,6 +289,13 @@ li > a{
 opacity: 1;
 }
 
+
+#sub-footer {
+	background: #045FB4;
+}
+
+
+
 /*tablets*/
 @media (max-width: 728px){
 	#nav-menu {
@@ -310,10 +317,10 @@ opacity: 1;
 	}
 
 	#nav-responsive ul {
-		width: 100%;
+		float: left;
 	}
 	
-	.search-bar, .search-icon {
+	.search-bar, .search-icon, img .search-icon {
 		display: none;
 	}
 }
