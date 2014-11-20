@@ -169,7 +169,7 @@ li > a{
 #breadcumbs ul {
 	vertical-align: middle;
 	margin-bottom: .25em;
-	background: #003375;;
+	background: #003375;
 
 	border-radius: 0 5px 5px 0px;
 }
@@ -291,12 +291,40 @@ opacity: 1;
 
 
 #sub-footer {
-	background: #045FB4;
+	background: #003375;
+}
+
+#sub-footer  div{
+		padding: .125em;
+		/*vertical-align: top;*/
+		float: left;
 }
 
 .info{
 	float: right;
 }
+
+.producto-container img{
+	margin: 0;
+	padding: 0;
+	border: solid 2px #000;
+	margin-left: 2em;
+	border-radius: 15px;
+	/*max-height: 20px;*/
+}
+
+
+
+.producto-nombre {
+	position: relative;
+	top: 8em;
+	border-radius: 10px;
+	border-right: solid 2px #000;
+	text-align: center;
+}
+
+
+
 
 /*tablets*/
 @media (max-width: 728px){
