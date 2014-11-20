@@ -294,7 +294,9 @@ opacity: 1;
 	background: #045FB4;
 }
 
-
+.info{
+	float: right;
+}
 
 /*tablets*/
 @media (max-width: 728px){
