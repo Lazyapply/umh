@@ -86,19 +86,59 @@
 		<!-- body -->
 			<div id="content" class="l-12 m-12 x-12">
 				<div class="panel l-12 m-12 x-12">
-					<form  action="#" method="POST">
-						<div class="contact">
-							<label for="empresa">Empresea/Organizaci&oacute;n</label>
-							<input type="text" name="empresa" id="empresa"/><br/>
-							<label for="PersonaC">Persona de contacto</label>
-							<input type="text" name="PersonaC" id="PersonaC"/><br/>
-							<label for="empresa">Empresea/Organizaci&oacute;n</label>
-							<input type="text" name="empresa" id="empresa"/><br/>
-							<label for="empresa">Empresea/Organizaci&oacute;n</label>
-							<input type="text" name="empresa" id="empresa"/><br/>
-							<label for="empresa">Empresea/Organizaci&oacute;n</label>
-							<input type="text" name="empresa" id="empresa"/><br/>
+					<form   class="contact" action="#" method="post">
+						<div id="contact" class="l-12 m-12 x-12 contact">
+						<!-- tipos validos de imputs  "text", "password", "checkbox", "radio", "submit", "reset", "file", "hidden", "image", "button" -->
+							<label class="l-6 m-6 x-12" for="empresa">Empresea/Organizaci&oacute;n</label>
+							<input class="l-6 m-6 x-12" type="text" name="empresa" id="empresa"/>
+							<label class="l-6 m-6 x-12" for="Persona_c">Persona de contacto</label>
+							<input class="l-6 m-6 x-12" type="text" name="Persona_c" id="Persona_c"/>
+							<label class="l-6 m-6 x-12" for="email">Email</label>
+							<input class="l-6 m-6 x-12" type="text" name="email" id="email"/>
+							<label class="l-6 m-6 x-12" for="Telf">Tel&eacute;fono</label>
+							<input class="l-6 m-6 x-12" type="text" name="Telf" id="Telf"/>
+							
+							<label class="l-6 m-6 x-12" for="conocio">Empresea/Organizaci&oacute;n</label>
+							<select class="l-6 m-6 x-12" name="conocio" id="conocio">
+								<option value="tv">Televisi&oacute;n</option>
+								<option value="prensa">Presna</option>
+								<option value="radio">Radio</option>
+								<option value="recomendacion">Recomendaci&oacute;n</option>
+							</select>
+							
+							
+							<label class="l-6 m-6 x-12" for="asunto">Asunto</label>
+							<textarea rows="10" cols="50" class="l-6 m-6 x-12" type="text" name="asunto" id="asunto" form="contact"></textarea><br/>
+
+							<div class="l-6 m-6 x-12"></div>
+							<fieldset class="l-6 m-6 x-12 checkbox">
+								<legend>&Aacute;reas de interes</legend>
+								<input type="checkbox" name="intereses[]" value="Hardware"/>Hardware
+								<input type="checkbox" name="intereses[]" value="Software"/>Software
+								<input type="checkbox" name="intereses[]" value="Servidores"/>Servidores
+								<input type="checkbox" name="intereses[]" value="Redes"/>Redes
+							</fieldset>
+							
+							
+							<div class="l-6 m-6 x-12"></div>
+							<fieldset class="l-6 m-6 x-12 radio">
+								<legend>Or&iacute;gen</legend>
+							<input class="l-6 m-6 x-12 " type="radio" name="origen" value="opt_empresa" id="opt_empresa"/>Empresa<br/>
+							<input class="l-6 m-6 x-12 " type="radio" name="origen" value="opt_particular" id="opt_particular"/>Particular
+							</fieldset>
+							
+							<div class="l-6 m-6 x-12"></div>
+							<fieldset class="l-6 m-6 x-12 radio">
+							<input class="l-6 m-6 x-12" type="checkbox" name="publi" id="publi"/>Recibir newsteller
+							</fieldset>
+
+							<div class="l-12 m-12 x-12 sendButtons">
+								<input class="l-4 m-4 x-4 btn" type="reset" value="Borrada datos"/>
+								<input class="l-8 m-8 x-8 btn" type="submit" value="Enviar"/>
+							</div>
+							
 						</div>
+
 					</form>
 				</div>
 				

@@ -341,7 +341,67 @@ form .contact {
 	margin-top: 1em;
 }
 
-/*tablets*/
+.contact *{
+	margin-top: .25em;
+	/*display: inline;*/
+	/*margin: .5em;*/
+	/*padding: .5em;*/
+}
+
+.contact input, .contact textarea, .contact select, .contact fieldset{
+	margin-left: -5em;
+}
+
+.contact label{
+
+	/*padding-right: 2em;*/
+
+}
+
+ .checkbox input, .inputs{
+	margin: .125em;
+}
+
+.radio input{
+	margin-right: -30em;
+	margin-left: 1em;
+
+}
+
+.btn {
+	background: #003375;
+	color: #FFF;
+	padding: 1em;
+
+	margin-right: 2em;	
+}
+
+.btn:hover {
+	background:#004192;
+	font-weight: bold;
+}
+
+form .contact{
+	margin-bottom: 2em;
+}
+
+
+.sendButtons{
+	margin-left: 5em;
+
+}
+
+
+ table  tr{
+	border: 1px solid #000;
+}
+
+ table .t{
+	font-size: 1.25em;
+	font-weight: bold;
+ }
+
+/*mobile*/
 @media (max-width: 728px){
 	#nav-menu {
 		border-bottom: none;
