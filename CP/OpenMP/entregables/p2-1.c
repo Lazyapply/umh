@@ -30,8 +30,8 @@ int main(int argc, char *argv[]){
 	int 	i=0, j=0, iam, np=1, tBloque, N;
 	double	*vector, **matriz, *vResultado;
 
-	double	t1_a1 = 0, t1_a2 = 0, t1_b1 = 0, t1_b2 = 0, 
-	double	t2_a1 = 0, t2_a2 = 0, t2_b1 = 0, t2_b2 = 0, 
+	double	t1_a1 = 0, t1_a2 = 0, t1_b1 = 0, t1_b2 = 0;
+	double	t2_a1 = 0, t2_a2 = 0, t2_b1 = 0, t2_b2 = 0;
 
 
 
@@ -68,19 +68,36 @@ int main(int argc, char *argv[]){
 		#pragma omp for private(j) schedule(static, tBloque)
 		for(i=0;i<N;i++){
 			for(j=0;j<N;j++)
-				vResultado[i] += matriz[i][j] * vector[j]
+				vResultado[i] += matriz[i][j] * vector[j];
 		}
 
 	}//fin parallel
 	t2_a1 = omp_get_wtime();
+
 	/*
 	FIN OPCIÓN A1
 	 */
 
+	//borramos el vResultado
+	for(i=0;i<N;i++)
+		vResultado[i] = 0.0;
 
 	/*
 	INICIO OPCIÓN A2
 	 */
+	t1_a2 = omp_get_wtime();
+	#pragma omp parallel num_threads(np) private(iam, i, j) default(shared)
+	{
+		iam = omp_get_thread_num();
+
+		for(i=0;i<N;i++){
+			for(j=0;j<N;++j){
+				vResultado[(iam*tBloque)+i] += matriz[(iam*tBloque)+i][j];
+			}
+		}
+	}
+	t2_a2 = omp_get_wtime();
+
 	
 
 	/*
@@ -108,8 +125,11 @@ int main(int argc, char *argv[]){
 
 
 	//RESULTADOS
-	printf("\n--------------- RESULTADOS ---------------\n");
+	printf("\n\t----------------------- RESULTADOS -----------------------\n");
 	printf("\tEjercicio\tResultado\n");
-	printf("\tA1\t\tnp=%d N=%d tiempo=%f\n", np, N, (t2_a1 - t1_a1));
+	printf("\t"GREEN"A1"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%f"RESET"\n", np, N, (t2_a1 - t1_a1));
+	printf("\t"GREEN"A2"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%f"RESET"\n", np, N, (t2_a2 - t1_a2));
 
+
+	printf("\n\n");
 }
