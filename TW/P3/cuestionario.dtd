@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="ISO-8859-1"?> 
-<!ELEMENT cuestionario (pregunta, respuesta+)+>
-	<!ELEMENT pregunta (enunciado)>
-		<!ATTLIST pregunta id ID #REQUIRED>
-		<!ELEMENT enunciado (#PCDATA)>
+	<!ELEMENT cuestionario (pregunta)+>
+		<!ATTLIST cuestionario
+			id 		ID 		#REQUIRED
+			tema 	CDATA 	#REQUIRED>
 
-		<!ELEMENT respuesta (codificada?|numerica?|logica?|textolibre?)+>
-			<!ELEMENT codificada (#PCDATA)>
-			<!ELEMENT numerica (#PCDATA)>
-			<!ELEMENT logica (#PCDATA)>
-			<!ELEMENT textolibre (#PCDATA)>
+	<!ELEMENT pregunta (enunciado, respuesta+)>
+		<!ATTLIST pregunta
+			id 				ID 		#REQUIRED
+			correcta 		IDREFS 	#IMPLIED
+			valor-correcto 	CDATA   #IMPLIED
+			fecha-creacion 	CDATA 	#REQUIRED
+			autor 			CDATA   #REQUIRED>
+
+		<!ELEMENT enunciado (#PCDATA)>
+			<!ATTLIST enunciado
+				tipo 	(codificada|numerica|logica|textolibre) 	#REQUIRED>
+
+		<!ELEMENT respuesta (#PCDATA)>
+			<!ATTLIST respuesta
+				id_r 	IDREF 	#REQUIRED
+				id 		ID 		#IMPLIED>

@@ -1,11 +1,52 @@
-<?xml version="1.0"  encoding="iso-8859-1" standalone="no"?>
+<?xml version="1.0"  encoding="UTF-8" standalone="no"?>
 <!DOCTYPE cuestionario SYSTEM "cuestionario.dtd">
 
-<cuestionario>
-	<pregunta id="CG1">
-		<enunciado>¿Cual es la capital de Alemania?</enunciado>
-		<respuesta>
-			
+<cuestionario id="T1" tema="Tema uno">
+
+	<pregunta id="T1-1" correcta="T1-1-2" fecha-creacion="28/12/2014" autor="Diego">
+		<enunciado tipo="codificada">
+			¿Qué significa TW?
+		</enunciado>
+		<respuesta id_r="T1-1" id="T1-1-1">
+			Tecnologías Warhammer
+		</respuesta>
+		<respuesta id_r="T1-1" id="T1-1-2">
+			Tecnologías Web
+		</respuesta>
+		<respuesta id_r="T1-1" id="T1-1-3">
+			Transacciones Warp
 		</respuesta>
 	</pregunta>
+
+	<pregunta id="T1-2" correcta="T1-2-1 T1-2-3" fecha-creacion="27/12/2014" autor="Diego">
+		<enunciado tipo="numerica">
+			¿Cómo se mejora la carga de JS?
+		</enunciado>
+		<respuesta id_r="T1-2" id="T1-2-1">Poniendo la carga del JS al final del documento</respuesta>
+		<respuesta id_r="T1-2" id="T1-2-2">Usando librerías de mayor peso</respuesta>
+		<respuesta id_r="T1-2" id="T1-2-3">Usando carga asíncrona</respuesta>
+	</pregunta>
+
+	<pregunta id="T1-3" fecha-creacion="27/12/2014" autor="Diego">
+		<enunciado tipo="textolibre">
+			¿Qué tectnología es la que mas potencial tiene para ti?
+		</enunciado>
+		<respuesta id_r="T1-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis deserunt odio qui, obcaecati provident eveniet delectus soluta doloremque, quas necessitatibus accusantium asperiores numquam ipsam ut. Quasi assumenda nesciunt voluptate excepturi</respuesta>
+	</pregunta>
+
+	<pregunta id="T1-4" correcta="T1-4-1" fecha-creacion="27/12/2014" autor="Diego">
+		<enunciado tipo="logica">
+			¿Puede un documento XML estar bien formado pero no ser válido?
+		</enunciado>
+		<respuesta id_r="T1-4" id="T1-4-1">Si</respuesta>
+		<respuesta id_r="T1-4" id="T1-4-2">No</respuesta>
+	</pregunta>
+
+	<pregunta id="T1-5" valor-correcto="2014" fecha-creacion="27/12/2014" autor="Diego">
+		<enunciado tipo="numerica">
+			¿Puede un documento XML estar bien formado pero no ser válido?
+		</enunciado>
+		<respuesta id_r="T1-5" id="T1-5-1">2014</respuesta>
+	</pregunta>
+	
 </cuestionario>
