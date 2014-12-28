@@ -1,0 +1,11 @@
+<?xml version="1.0"  encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE cuestionario SYSTEM "cuestionario.dtd">
+
+<cuestionario>
+	<pregunta id="CG1">
+		<enunciado>¿Cual es la capital de Alemania?</enunciado>
+		<respuesta>
+			
+		</respuesta>
+	</pregunta>
+</cuestionario>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!ELEMENT cuestionario (pregunta, respuesta+)+>
+	<!ELEMENT pregunta (enunciado)>
+		<!ATTLIST pregunta id ID #REQUIRED>
+		<!ELEMENT enunciado (#PCDATA)>
+
+		<!ELEMENT respuesta (codificada?|numerica?|logica?|textolibre?)+>
+			<!ELEMENT codificada (#PCDATA)>
+			<!ELEMENT numerica (#PCDATA)>
+			<!ELEMENT logica (#PCDATA)>
+			<!ELEMENT textolibre (#PCDATA)>
