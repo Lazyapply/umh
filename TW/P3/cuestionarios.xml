@@ -1,7 +1,7 @@
 <?xml version="1.0"  encoding="UTF-8" standalone="no"?>
 <!DOCTYPE cuestionario SYSTEM "cuestionario.dtd">
 
-<cuestionario id="T1" tema="Tema uno">
+<cuestionario id="T1" tema="Tema uno TW">
 
 	<pregunta id="T1-1" correcta="T1-1-2" fecha-creacion="28/12/2014" autor="Diego">
 		<enunciado tipo="codificada">
