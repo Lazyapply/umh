@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="a.css"?>
+
+<basedatos  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="basedatos6.xsd" 
+xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <empleado> 
+	<num_emp>1</num_emp>	
+	<nom_emp>pepe</nom_emp>		
+	<sueldo>1000</sueldo>			
+	<num_dep>1A</num_dep>	
+  </empleado>
+  <empleado>
+	<num_emp>2</num_emp>	
+	<nom_emp>ana</nom_emp>		
+	<sueldo>2000</sueldo>			
+	<num_dep></num_dep>	
+  </empleado>
+  <empleado>
+	<num_emp>3</num_emp>	
+	<nom_emp>rosa</nom_emp>		
+	<nom_emp>rosae</nom_emp>		
+	<sueldo>2000</sueldo>			
+	<num_dep>2A</num_dep>	
+  </empleado>    
+  <empleado>
+	<num_emp>4</num_emp>	
+	<nom_emp>emilio</nom_emp>		
+	<sueldo>3000</sueldo>			
+	<num_dep>2A</num_dep>	
+  </empleado>  
+  <departamento>
+	<num_dep>1A</num_dep>	
+	<nom_dep>contabilidad</nom_dep>		
+	<presupuesto>5000</presupuesto>			
+  </departamento>
+  <departamento>
+	<num_dep>2A</num_dep>	
+	<nom_dep>i+d</nom_dep>		
+	<presupuesto>100000</presupuesto>			
+  </departamento>     
+
+</basedatos>

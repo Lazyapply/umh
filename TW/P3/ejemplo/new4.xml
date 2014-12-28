@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<novedades   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="novedades4.xsd">
+
+   <fecha>Octubre2014</fecha>
+  
+   
+   <libro>
+    <titulo>Aplicaciones web</titulo>
+	<autor>John McCarra</autor>
+	<direccion>Calle falsa, 123 </direccion>
+  </libro>
+  
+   <libro>
+    <titulo>Aplicaciones web</titulo>
+	<autor>Philip J. Fry</autor>
+	<direccion>Calle falsa, 123 </direccion>
+  </libro>  
+  
+  <disco genero="pop">
+	<titulo>O sea</titulo>
+	<interprete>Enrique Iglesias</interprete>
+	<interprete>Papuchi Iglesias</interprete>	
+	<direccion>Miami </direccion>	
+    </disco>
+    
+   <disco genero="rock" >
+	<titulo>AC/DC or BUST</titulo>
+	<interprete>Young Brothers</interprete>
+	<direccion>Australia </direccion>
+	</disco>
+	
+   
+</novedades>

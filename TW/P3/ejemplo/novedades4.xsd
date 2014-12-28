@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		  <xsd:element name="novedades" type="tipoNovedades"/>
+		  <xsd:complexType name="tipoNovedades">
+		     <xsd:sequence>
+		        <xsd:element name="fecha" type="xsd:string"/>
+		        <xsd:choice minOccurs="1" maxOccurs="unbounded">
+		           <xsd:element name="libro" type="tipoLibro"/>
+	           	   <xsd:element name="disco" type="tipoDisco"/>
+		        </xsd:choice>
+		     </xsd:sequence>
+		  </xsd:complexType>
+		   <xsd:complexType name="tipoDisco">
+		     <xsd:sequence>
+		       <xsd:element name="titulo" type="xsd:string"/>
+		       <xsd:element name="interprete" type="xsd:string" minOccurs="1" maxOccurs="2"/>
+		       <xsd:element name="direccion" type="xsd:anyURI"/>
+		     </xsd:sequence>
+		     <xsd:attribute name="genero" type="generoMusical" use="required"/>
+		   </xsd:complexType>
+		   <xsd:complexType name="tipoLibro">
+		      <xsd:sequence>
+		         <xsd:element name="titulo" type="xsd:string"/>
+		         <xsd:element name="autor" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		        <xsd:element name="direccion" type="xsd:anyURI"/>
+		      </xsd:sequence>
+		   </xsd:complexType>
+		   <xsd:simpleType name="generoMusical">
+		     <xsd:restriction base="xsd:string">
+		        <xsd:enumeration value="rock"/>
+		        <xsd:enumeration value="pop"/>
+		        <xsd:enumeration value="clasica"/>
+		     </xsd:restriction>
+		   </xsd:simpleType>
+		</xsd:schema>
+

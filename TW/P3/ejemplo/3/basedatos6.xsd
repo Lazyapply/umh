@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		  <xsd:element name="basedatos" type="tipobasedatos"/>
+		  
+		  <xsd:complexType name="tipobasedatos">
+		       <xsd:choice minOccurs="1" maxOccurs="unbounded">
+		           <xsd:element name="empleado" type="tipoempleado"/>
+	           	   <xsd:element name="departamento" type="tipodepartamento"/>
+		        </xsd:choice>
+		  </xsd:complexType>
+		   
+		     
+		   <xsd:complexType name="tipoempleado">
+		      <xsd:sequence>
+		         <xsd:element name="num_emp" type="xsd:integer"/>
+		         <xsd:element name="nom_emp" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		         <xsd:element name="sueldo" type="xsd:float"/>
+				 <xsd:element name="num_dep" type="xsd:string"/>
+		      </xsd:sequence>
+		   </xsd:complexType>
+		   
+		   		   
+		     <xsd:complexType name="tipodepartamento">
+		     <xsd:sequence>
+			   <xsd:element name="num_dep" type="xsd:string"/>
+		       <xsd:element name="nom_dep" type="xsd:string"/>
+		       <xsd:element name="presupuesto" type="xsd:integer" minOccurs="0" maxOccurs="1"/>
+		       </xsd:sequence>
+		   </xsd:complexType>
+		   
+		  </xsd:schema>
+
