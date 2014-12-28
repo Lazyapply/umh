@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="cuestionario">
+
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="pregunta"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:ID"/>
+      <xs:attribute name="tema" use="required"/>
+    </xs:complexType>
+
+  </xs:element>
+
+  <xs:element name="pregunta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="enunciado"/>
+        <xs:element maxOccurs="unbounded" ref="respuesta"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:ID"/>
+      <xs:attribute name="correcta" type="xs:IDREFS"/>
+      <xs:attribute name="valor-correcto"/>
+      <xs:attribute name="fecha-creacion" use="required"/>
+      <xs:attribute name="autor" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="enunciado">
+    <xs:complexType mixed="true">
+      <xs:attribute name="tipo" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="codificada"/>
+            <xs:enumeration value="numerica"/>
+            <xs:enumeration value="logica"/>
+            <xs:enumeration value="textolibre"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="respuesta">
+    <xs:complexType mixed="true">
+      <xs:attribute name="id_r" use="required" type="xs:IDREF"/>
+      <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
