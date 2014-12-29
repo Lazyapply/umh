@@ -14,8 +14,8 @@ pregunta{
 
 enunciado{
 	display: block;
-	border-bottom: solid 2px #000;
-	font-weight: bold;
+	border-bottom: solid 2px #000;font-weight: bold;
+	
 	margin: 20px 0;
 }
 

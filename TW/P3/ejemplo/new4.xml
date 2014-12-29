@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="yes" ?>
-
+<?xml-stylesheet type="text/css" href="css/main.css"?>
 <novedades   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="novedades4.xsd">
 
    <fecha>Octubre2014</fecha>
