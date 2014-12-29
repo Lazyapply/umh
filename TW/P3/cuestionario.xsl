@@ -18,7 +18,6 @@
 								<p><h4>Identificador: <xsl:value-of select="@id"/></h4></p>
 							</div>
 						</div>
-						<!-- id="T1-1" correcta="T1-1-2" fecha-creacion="28/12/2014" autor="Diego"> -->
 						<div class="cuerpo">
 							<form action="#" name="cuestionario" method="GET">
 							<xsl:apply-templates select="pregunta"/>
@@ -44,11 +43,37 @@
 		<div class="pregunta">
 			<xsl:apply-templates/>
 				<xsl:choose>
-					<xsl:when test="enunciado/@tipo='codificada'">
+
+					<xsl:when test="enunciado/@tipo='codificadam'">
 						<xsl:for-each select="respuesta">
-							<xsl:value-of select="."/>
+							<p><input type="checkbox" name="respuesta" /><xsl:value-of select="."/></p>
 						</xsl:for-each>
 					</xsl:when>
+
+					<xsl:when test="enunciado/@tipo='codificadas'">
+						<xsl:for-each select="respuesta">
+							<p><input type="radio" name="respuesta" /><xsl:value-of select="normalize-space(.)"/></p>
+						</xsl:for-each>
+					</xsl:when>
+					
+					<xsl:when test="enunciado/@tipo='textolibre'">
+						<xsl:variable name="cols" select="enunciado/@cols"/>
+						<xsl:variable name="rows" select="enunciado/@rows"/>
+						<textarea name="text" cols="{$cols}" rows="{$rows}" scroll="no"></textarea>
+					</xsl:when>
+
+					<xsl:when test="enunciado/@tipo='numerica'">
+						<xsl:variable name="min" select="enunciado/@min"/>
+						<xsl:variable name="max" select="enunciado/@max"/>
+						<p><input type="number" min="{$min}" max="{$max}"/></p>
+					</xsl:when>
+
+					<xsl:when test="enunciado/@tipo='logica'">
+						<xsl:for-each select="respuesta">
+						<p><input type="radio" name="logica"/><xsl:value-of select="normalize-space(.)"/></p>
+					</xsl:for-each>
+					</xsl:when>
+
 					<xsl:otherwise>
 						<h1>N</h1>
 					</xsl:otherwise>
@@ -73,8 +98,6 @@
 
 		<div class="respuesta">
 			<!-- <xsl:value-of select="/pregunta/enunciado"/> -->
-			
-
 		</div>
 	</xsl:template>
 </xsl:stylesheet>

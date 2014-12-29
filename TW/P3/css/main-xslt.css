@@ -52,6 +52,7 @@ body *{
 
 .cuerpo .pregunta{
 display: inline-block;
+width: 100%;
 }
 
 .info-pregunta {
@@ -65,4 +66,8 @@ display: inline-block;
 
 .enunciado{
 	font-size: 2em;
+}
+
+p input{
+	display: inline-block;
 }

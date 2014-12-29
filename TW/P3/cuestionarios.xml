@@ -4,10 +4,10 @@
 <!DOCTYPE cuestionario SYSTEM "cuestionario.dtd">
 
 <!-- <cuestionario id="T1" tema="Tema uno TW"> -->
-<cuestionario id="T1" tema="Tema uno TW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="cuestionarioSchema.xsd">
+<cuestionario id="T1" tema="Tema uno TW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="cuestionario.xsd">
 
 	<pregunta id="T1-1" correcta="T1-1-2" fecha-creacion="28/12/2014" autor="Diego">
-		<enunciado tipo="codificada">
+		<enunciado tipo="codificadas">
 			¿Qué significa TW?
 		</enunciado>
 		<respuesta id_r="T1-1" id="T1-1-1">
@@ -22,7 +22,7 @@
 	</pregunta>
 
 	<pregunta id="T1-2" correcta="T1-2-1 T1-2-3" fecha-creacion="27/12/2014" autor="Diego">
-		<enunciado tipo="numerica">
+		<enunciado tipo="codificadam">
 			¿Cómo se mejora la carga de JS?
 		</enunciado>
 		<respuesta id_r="T1-2" id="T1-2-1">Poniendo la carga del JS al final del documento</respuesta>
@@ -31,7 +31,7 @@
 	</pregunta>
 
 	<pregunta id="T1-3" fecha-creacion="27/12/2014" autor="Diego">
-		<enunciado tipo="textolibre">
+		<enunciado tipo="textolibre" cols="100" rows="10">
 			¿Qué tectnología es la que mas potencial tiene para ti?
 		</enunciado>
 		<respuesta id_r="T1-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis deserunt odio qui, obcaecati provident eveniet delectus soluta doloremque, quas necessitatibus accusantium asperiores numquam ipsam ut. Quasi assumenda nesciunt voluptate excepturi</respuesta>
@@ -46,7 +46,7 @@
 	</pregunta>
 
 	<pregunta id="T1-5" valor-correcto="2014" fecha-creacion="27/12/2014" autor="Diego">
-		<enunciado tipo="numerica">
+		<enunciado tipo="numerica" min="1994" max="2020">
 			¿En qué año se propuso como RC HTML5?
 		</enunciado>
 		<respuesta id_r="T1-5" id="T1-5-1">2014</respuesta>

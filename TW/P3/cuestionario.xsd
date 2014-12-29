@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="cuestionario">
-
     <xs:complexType>
       <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="pregunta"/>
@@ -9,9 +8,7 @@
       <xs:attribute name="id" use="required" type="xs:ID"/>
       <xs:attribute name="tema" use="required"/>
     </xs:complexType>
-
   </xs:element>
-
   <xs:element name="pregunta">
     <xs:complexType>
       <xs:sequence>
@@ -25,22 +22,25 @@
       <xs:attribute name="autor" use="required"/>
     </xs:complexType>
   </xs:element>
-
   <xs:element name="enunciado">
     <xs:complexType mixed="true">
       <xs:attribute name="tipo" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
-            <xs:enumeration value="codificada"/>
+            <xs:enumeration value="codificadas"/>
+            <xs:enumeration value="codificadam"/>
             <xs:enumeration value="numerica"/>
             <xs:enumeration value="logica"/>
             <xs:enumeration value="textolibre"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
+      <xs:attribute name="cols"/>
+      <xs:attribute name="rows"/>
+      <xs:attribute name="min"/>
+      <xs:attribute name="max"/>
     </xs:complexType>
   </xs:element>
-  
   <xs:element name="respuesta">
     <xs:complexType mixed="true">
       <xs:attribute name="id_r" use="required" type="xs:IDREF"/>

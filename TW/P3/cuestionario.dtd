@@ -14,7 +14,11 @@
 
 		<!ELEMENT enunciado (#PCDATA)>
 			<!ATTLIST enunciado
-				tipo 	(codificada|numerica|logica|textolibre) 	#REQUIRED>
+				tipo 	(codificadas|codificadam|numerica|logica|textolibre) 	#REQUIRED
+				cols 	CDATA 										#IMPLIED
+				rows 	CDATA 										#IMPLIED
+				min 	CDATA 										#IMPLIED
+				max 	CDATA 										#IMPLIED>
 
 		<!ELEMENT respuesta (#PCDATA)>
 			<!ATTLIST respuesta
