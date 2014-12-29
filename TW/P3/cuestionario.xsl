@@ -33,6 +33,8 @@
 		</html>
 	</xsl:template>
 	
+
+
 	<xsl:template match="pregunta">
 		<div class="info-pregunta">
 			ID:<xsl:value-of select="@id"/>
@@ -40,18 +42,39 @@
 			Autor:<xsl:value-of select="@autor"/>
 		</div>
 		<div class="pregunta">
-			<xsl:apply-templates select="enunciado"/>
+			<xsl:apply-templates/>
+				<xsl:choose>
+					<xsl:when test="enunciado/@tipo='codificada'">
+						<xsl:for-each select="respuesta">
+							<xsl:value-of select="."/>
+						</xsl:for-each>
+					</xsl:when>
+					<xsl:otherwise>
+						<h1>N</h1>
+					</xsl:otherwise>
+				</xsl:choose>
 		</div>
 		<div class="respuestas">
 			<xsl:apply-templates select="respuesta"/>
 		</div>
 	</xsl:template>
 
+
+
+
+
 	<xsl:template match="enunciado">
 		<div class="enunciado"><xsl:value-of select="text()"/></div>
 	</xsl:template>
 
+	
+
 	<xsl:template match="respuesta">
-		<div class="respuesta"><xsl:value-of select="text()"/></div>
+
+		<div class="respuesta">
+			<!-- <xsl:value-of select="/pregunta/enunciado"/> -->
+			
+
+		</div>
 	</xsl:template>
 </xsl:stylesheet>
