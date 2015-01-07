@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ventana 2</title>
+
+	<script>
+	var seg = 0;
+
+		function nuevaVentana(){
+			nueva = window.open("", "Hora", "menubar=yes, scrollbar=yes, width=800, height=600, top=1, left=1");
+			nueva.document.writeln("<html><head><title>");
+			nueva.document.writeln("Ejemplo Hora");
+			nueva.document.writeln("</title></head><body></body></html>");
+			hora("nueva");
+		}
+
+		function hora(par_ventana){
+			var ventana, fecha;
+
+			fecha = new Date();
+			ventana = eval(par_ventana);
+			ventana.document.writeln(fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds());
+			ventana.document.writeln(" ");
+			setTimeout("hora('nueva')", 1000);
+			seg++;
+			if(seg == 5)
+				ventana.close();
+		}
+	</script>
+
+
+</head>
+<body>
+	<script>
+	nuevaVentana();
+	</script>
+</body>
+</html>

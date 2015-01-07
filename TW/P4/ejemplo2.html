@@ -3,10 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ejemplo JS 2</title>
+
+	<script>
+		var i;
+
+		function longitud(radio){
+			var pi;
+			pi = 3.1416;
+			return(2*pi*radio);
+		}
+
+		function factorial(num){
+			
+			if(num < 2){
+				return (1);
+			}
+			else{
+				return (num * factorial(num-1));
+			}
+		}
+
+	</script>
+
 </head>
 <body>
 	<script>
-	alert("Hola");
+	i=5;
+	alert("Factorial:"+factorial(i));
 	</script>
 </body>
 </html>

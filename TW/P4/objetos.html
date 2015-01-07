@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos en JS</title>
+
+	<script type="text/javascript">
+
+		function Persona(eNombre, eEdad, eCasado){
+			this.nombre = eNombre;
+			this.edad  	= eEdad;
+			this.casado	= eCasado;
+		}
+
+	</script>
+
+</head>
+<body>
+	<script>
+	var homer;
+	homer = new Persona("Hommer Simpson", 43, true);
+	alert(homer.nombre);
+	alert(homer.edad);
+	alert(homer.casado);
+	</script>
+</body>
+</html>
