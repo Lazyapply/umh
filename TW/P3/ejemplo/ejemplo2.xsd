@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- 
+	empleado (num_emp,nom_emp,ape1,ape2,sueldo,num_dep, categoria)
+	categoria = peon | encargado | director OPTIONAL
+
+	departamento (num_dep,nom_dep,presupuesto)
+	-->
+
+
+			<xsd:element name="ejemplo2" type="baseDatos"/>
+			<xsd:sequence>
+				<xsd:element name="empleado" type="tipo_empleado"/>
+				<xsd:element name="departamento" type="tipo_departamento" minOccurs="1" maxOccurs="5"/>
+			</xsd:sequence>
+		
+				<xsd:complexType name="tipo_empleado">
+					<xsd:element name="num_emp" type="xsd:integer"/>
+					<xsd:element name="nom_emp" type="xsd:string"/>
+					<xsd:element name="ap1" type="xsd:string"/>
+					<xsd:element name="ap2" type="xsd:string" use="optional"/>
+					<xsd:element name="sueldo" type="xsd:decimal"/>
+					<xsd:element name="num_dep" type="xsd:integer"/>
+					<xsd:atrribute name="categoria" type="cat_prof" use="optional"/>
+				</xsd:complexType>
+
+				<xsd:complexType name="tipo_departamento">
+					<xsd:element name="num_dep" type="xsd:integer"/>
+					<xsd:element name="nom_dep" type="xsd:string"/>
+					<xsd:element name="presupuesto" type="xsd:decimal" use="optional"/>
+				</xsd:complexType>
+
+
+		<xsd:simpleType name="cat_prof">
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="peon"/>
+				<xsd:enumeration value="encargado"/>
+				<xsd:enumeration value="director"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+
+	</xsd:schema>

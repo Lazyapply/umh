@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+	<!ELEMENT cuestionario (pregunta)+>
+		<!ATTLIST cuestionario
+			id 		ID 		#REQUIRED
+			tema 	CDATA 	#REQUIRED>
+
+	<!ELEMENT pregunta (enunciado, respuesta+)>
+		<!ATTLIST pregunta
+			id 				ID 		#REQUIRED
+			correcta 		IDREFS 	#IMPLIED
+			valor-correcto 	CDATA   #IMPLIED
+			fecha-creacion 	CDATA 	#REQUIRED
+			autor 			CDATA   #REQUIRED>
+
+		<!ELEMENT enunciado (#PCDATA)>
+			<!ATTLIST enunciado
+				tipo 	(codificadas|codificadam|numerica|logica|textolibre) 	#REQUIRED
+				cols 	CDATA 										#IMPLIED
+				rows 	CDATA 										#IMPLIED
+				min 	CDATA 										#IMPLIED
+				max 	CDATA 										#IMPLIED>
+
+		<!ELEMENT respuesta (#PCDATA)>
+			<!ATTLIST respuesta
+				id_r 	IDREF 	#REQUIRED
+				id 		ID 		#IMPLIED>

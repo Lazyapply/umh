@@ -28,7 +28,15 @@
 int main(int argc, char *argv[]){
 
 	int 	i=0, j=0, iam, np=1, tBloque, N;
+<<<<<<< HEAD
 	double	*vector, **matriz, *vResultado, aux;
+=======
+<<<<<<< HEAD
+	double	*vector, **matriz, *vResultado, aux;
+=======
+	double	*vector, **matriz, *vResultado;
+>>>>>>> 42c83935209a8922f153fa8eec720518eb8508b4
+>>>>>>> f5415c917f9528aa9d18558a5726b51497b2ea6d
 
 	double	t1_a1 = 0, t1_a2 = 0, t1_b1 = 0, t1_b2 = 0;
 	double	t2_a1 = 0, t2_a2 = 0, t2_b1 = 0, t2_b2 = 0;
@@ -47,11 +55,27 @@ int main(int argc, char *argv[]){
 	matriz 		= (double**) malloc(N * sizeof(double*));
 
 	for(i=0;i<N;i++){
+<<<<<<< HEAD
 		vector[i] = rand()%9;
 		matriz[i] = (double*) malloc(N * sizeof(double));
 
 		for(j=0;j<N;j++)
 			matriz[i][j] = rand()%9;
+=======
+<<<<<<< HEAD
+		vector[i] = rand()%9;
+		matriz[i] = (double*) malloc(N * sizeof(double));
+
+		for(j=0;j<N;j++)
+			matriz[i][j] = rand()%9;
+=======
+		vector[i] = 2.0;
+		matriz[i] = (double*) malloc(N * sizeof(double));
+
+		for(j=0;j<N;j++)
+			matriz[i][j] = 2.0;
+>>>>>>> 42c83935209a8922f153fa8eec720518eb8508b4
+>>>>>>> f5415c917f9528aa9d18558a5726b51497b2ea6d
 	}
 
 
@@ -90,7 +114,15 @@ int main(int argc, char *argv[]){
 	{
 		iam = omp_get_thread_num();
 
+<<<<<<< HEAD
 		for(i=0;i<tBloque;i++){
+=======
+<<<<<<< HEAD
+		for(i=0;i<tBloque;i++){
+=======
+		for(i=0;i<N;i++){
+>>>>>>> 42c83935209a8922f153fa8eec720518eb8508b4
+>>>>>>> f5415c917f9528aa9d18558a5726b51497b2ea6d
 			for(j=0;j<N;++j){
 				vResultado[(iam*tBloque)+i] += matriz[(iam*tBloque)+i][j];
 			}
@@ -103,6 +135,12 @@ int main(int argc, char *argv[]){
 	/*
 	FIN OPCIÓN A2
 	 */
+<<<<<<< HEAD
+	//borramos el vResultado
+	for(i=0;i<N;i++)
+		vResultado[i] = 0.0;
+=======
+<<<<<<< HEAD
 	//borramos el vResultado
 	for(i=0;i<N;i++)
 		vResultado[i] = 0.0;
@@ -155,6 +193,63 @@ int main(int argc, char *argv[]){
 	}
 
 	t2_b2 = omp_get_wtime();
+=======
+	
+>>>>>>> f5415c917f9528aa9d18558a5726b51497b2ea6d
+	/*
+	INICIO OPCIÓN B1
+	 */
+	t1_b1 = omp_get_wtime();
+	for(i=0;i<N;i++){
+
+		aux = 0.0;
+		#pragma omp parallel num_threads(np) private(iam) shared(aux)  default(shared)
+		{
+			iam = omp_get_thread_num();
+
+			#pragma omp for private(j) schedule(static, tBloque) reduction(+:aux)
+			for(j=0;j<N;j++){
+				aux += matriz[i][j] * vector[j];
+			}
+
+		}
+		vResultado[i] = aux;
+	}
+
+	t2_b1 = omp_get_wtime();
+	/*
+	FIN OPCIÓN B1
+	 */
+	//borramos el vResultado
+	for(i=0;i<N;i++)
+		vResultado[i] = 0.0;
+	/*
+	INICIO OPCIÓN B2
+	 */
+<<<<<<< HEAD
+	t1_b2 = omp_get_wtime();
+
+	#pragma omp parallel num_threads(np) private(iam, i, j, aux) default(shared)
+	{
+		iam = omp_get_thread_num();
+
+		for(i=0;i<N;i++){
+
+			aux = 0.0;
+			aux += matriz[i][iam*tBloque+j] * vector[iam*tBloque+j];
+		}
+
+		#pragma omp critical
+		{
+			vResultado[i] += aux;
+		}
+	}
+
+	t2_b2 = omp_get_wtime();
+=======
+	
+>>>>>>> 42c83935209a8922f153fa8eec720518eb8508b4
+>>>>>>> f5415c917f9528aa9d18558a5726b51497b2ea6d
 
 	/*
 	FIN OPCIÓN B2
@@ -163,12 +258,28 @@ int main(int argc, char *argv[]){
 
 
 	//RESULTADOS
+<<<<<<< HEAD
 	printf("\n\t----------------------- "BOLDWHITE"RESULTADOS"RESET" -----------------------\n");
 	printf("\tEjercicio\tResultado\n");
 	printf("\t"GREEN"A1"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_a1 - t1_a1));
 	printf("\t"GREEN"A2"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_a2 - t1_a2));
 	printf("\t"GREEN"B1"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_b1 - t1_b1));
 	printf("\t"GREEN"B2"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_b2 - t1_b2));
+=======
+<<<<<<< HEAD
+	printf("\n\t----------------------- "BOLDWHITE"RESULTADOS"RESET" -----------------------\n");
+	printf("\tEjercicio\tResultado\n");
+	printf("\t"GREEN"A1"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_a1 - t1_a1));
+	printf("\t"GREEN"A2"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_a2 - t1_a2));
+	printf("\t"GREEN"B1"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_b1 - t1_b1));
+	printf("\t"GREEN"B2"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%fs"RESET"\n", np, N, (t2_b2 - t1_b2));
+=======
+	printf("\n\t----------------------- RESULTADOS -----------------------\n");
+	printf("\tEjercicio\tResultado\n");
+	printf("\t"GREEN"A1"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%f"RESET"\n", np, N, (t2_a1 - t1_a1));
+	printf("\t"GREEN"A2"RESET"\t\tnp="YELLOW"%d"RESET" N="YELLOW"%d"RESET" tiempo="YELLOW"%f"RESET"\n", np, N, (t2_a2 - t1_a2));
+>>>>>>> 42c83935209a8922f153fa8eec720518eb8508b4
+>>>>>>> f5415c917f9528aa9d18558a5726b51497b2ea6d
 
 
 	printf("\n\n");

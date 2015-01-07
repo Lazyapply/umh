@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="a.css"?>
+
+	<!-- 
+	empleado (num_emp,nom_emp,ape1,ape2,sueldo,num_dep, categoria)
+	categoria = peon | encargado | director OPTIONAL
+
+	departamento (num_dep,nom_dep,presupuesto)
+	-->
+<baseDatos   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="ejemplo2.xsd">
+
+	<empleado categoria="director">
+		<num_emp>1</num_emp>
+		<nom_emp>Diego</nom_emp>
+		<ape1>Velaochaga</ape1>
+		<sueldo>2500.85</sueldo>
+	</empleado>
+
+	<departamento>
+		<num_emp>1</num_emp>
+		<nom_dep>SI</nom_dep>
+		<presupuesto>25124.85</presupuesto>
+	</departamento>
+
+</baseDatos>
