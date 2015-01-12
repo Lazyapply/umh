@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Validacion</title>
+ <script>
+  function cambiar(){
+   // if (document.forms[0][0].value == "") {
+   // alert(document.forms[0].elements.length);
+   // };
+   // 
+   
+   var x = document.getElementById("texto").value;
+   // alert(x);
+
+   var element = document.getElementsByTagName("p");
+   element.innerHTML = x;
+  }
+
+  function r(){
+   var e = document.getElementById("myD");
+   var n = document.createElement("input");
+   n.type = "reset";
+   n.value = "Borrar";
+   /*var att = n.createAttribute("type");
+   att.value = "reset";
+   n.setAttributeNode(att);*/
+   e.appendChild(n);
+   
+  }
+
+ </script>
+</head>
+<body>
+  <p id="p">Esto es texto</p>
+  <input type="text" onchange="r()" id="texto">
+  <button id="boton" onclick="cambiar()">Cambiar</button>
+  <div id="myD"></div>
+ 
+</body>
+</html>
