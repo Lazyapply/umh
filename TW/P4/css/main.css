@@ -1,0 +1,439 @@
+/*Creado con fontsquirrel*/
+@font-face {
+    font-family: 'dosismedium';
+    src: url('../fonts/dosis-medium-webfont.eot');
+    src: url('../fonts/dosis-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dosis-medium-webfont.woff2') format('woff2'),
+         url('../fonts/dosis-medium-webfont.woff') format('woff'),
+         url('../fonts/dosis-medium-webfont.ttf') format('truetype'),
+         url('../fonts/dosis-medium-webfont.svg#dosismedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+header, section, footer, aside, nav, article, figure, figcaption, hgroup {
+	display: block;
+}
+
+button { border:0;}
+
+
+
+/*16px = 12pt = 100% = 1em*/	
+body {
+	background-color: #DDE7F3;
+	color: #000000;
+	font-family: "dosismedium", Helvetica, Verdana;
+	font-size: 1.25em;
+	max-width: 960px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	
+}
+
+#container {
+	width: 100%;
+	margin: 0 auto;
+
+}
+
+#header {
+	width: 100%;
+	background: #004192;
+	vertical-align: bottom;
+}
+
+img{
+	float: left;
+	/*padding: .5em;*/
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+li > a{
+	padding: 0;
+	margin:0;
+}
+
+
+
+#nav-menu {
+	float: left;
+	margin: 0;
+	padding: 0;
+	border-bottom: 2px solid #000;
+}
+
+
+#nav-menu ul {
+	margin: 0;
+	padding: 0;
+	margin-left: .125em;
+	float: right;
+	list-style-type: none;
+	font-size: 1.125em;
+	height: 64px;
+
+
+}
+
+.last{
+	position: relative;
+	right: -65px;
+}
+
+#nav-menu .submenu ul li:first-child {
+	border-top: 5px solid #000;
+}
+
+#nav-menu .submenu ul li a{
+	border-left: 2px solid #000;
+}
+
+#nav-menu li {
+	height: inherit;
+	display: inline;
+	float: left;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+	padding-right: .04em;
+}
+
+#nav-menu li a{
+	display: block;
+	text-decoration: none;
+	font-weight: bold;
+	background: #004192;
+	line-height: 64px;
+	padding: 0 .5em;
+	color: #FFF;
+	border-right: 2px solid #000;
+
+}
+
+#nav-menu li a:hover{
+	background: #FCFCFC;
+	color: #E18E08;
+}
+
+#nav-menu li .submenu{
+	border-top: 0;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	display: none;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	position: absolute;
+	width: 17.5em;
+	visibility: hidden;
+	z-index: 100;
+
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+#nav-menu li:hover .submenu{
+	font-size: .65em;
+	display: block;
+	opacity: 1;
+	visibility: visible;
+}
+
+#nav-menu li:hover .submenu ul li{
+	display: block;
+	padding-top: .25em;
+	width: 74.75%;
+}
+
+#breadcumbs *{
+	text-decoration: none;
+	list-style-type: none;
+	font-size: .9em;
+	text-align: left;
+}
+
+#breadcumbs li{
+	display: inline;
+}
+
+#breadcumbs ul {
+	vertical-align: middle;
+	margin-bottom: .25em;
+	background: #003375;
+
+	border-radius: 0 5px 5px 0px;
+}
+
+
+
+#breadcumbs li a {
+	color: #FFF;
+	padding-right: .5em;
+	padding-left: .5em;
+
+}
+
+#breadcumbs li a:hover {
+	color: #E18E08;
+}
+
+#breadcumbs ul li:after {
+	font-size: 1.25em;
+	font-weight: bold;
+	content: "\00BB";
+}
+
+#breadcumbs ul li:last-child:after {
+	content: none;
+}
+
+.search-bar {
+	margin: 0;
+	padding: 0;
+	margin-top: .95em;
+	text-decoration: none;
+	list-style-type: none;
+	font-size: .9em;
+	text-align: left;
+}
+.search-icon{
+	padding: 0;
+	margin: 0;
+	background: #004192;
+}
+.search-icon{
+	width: 20px;
+	height: auto;
+}
+
+
+#content img, .logo img{
+	padding: .5em;
+}
+
+.panel {
+
+	margin-top: 1em;
+	border-right: 3px solid #004192;
+	border-left: 3px solid #004192;
+	background: #FFF;
+	min-height: 100px;
+}
+.panel-text * {
+	text-decoration: none;
+	list-style-type: none;
+	color: #000;
+}
+
+.panel-text {
+	margin: auto 1em;
+	padding-right: 1em;
+}
+
+#footer *{
+	list-style-type: none;
+	text-decoration: none;
+}
+
+#footer{
+	margin-top: 2em;
+	min-height: 5em;
+}
+
+
+#shorts *{
+		color: #FFF;
+}
+
+#shorts {
+	background: #004192;
+	
+}
+
+#shorts div{
+	margin: .5em auto;
+}
+
+
+#shorts a:hover{
+	color: #E18E08;
+}
+
+
+#nav-responsive{
+	display: none;
+	margin-top: .5em;
+	background: url(../img/search-icon.png) no-repeat 5px 10px;
+	text-decoration: none;
+	float: right;
+	width: 80px;
+	height: 80px;
+	/*position: absolute;*/
+	/*right: 0;*/
+	/*left: 0;*/
+	opacity: .6;
+	z-index: 10;
+}
+
+#nav-responsive.nav-active{
+opacity: 1;
+}
+
+
+#sub-footer {
+	background: #003375;
+}
+
+#sub-footer  div{
+		padding: .125em;
+		/*vertical-align: top;*/
+		float: left;
+}
+
+.info{
+	float: right;
+}
+
+.producto-img{
+	margin: 0;
+	padding: 0;
+	border: solid 2px #000;
+	margin-left: 2em;
+	border-radius: 15px;
+	/*max-height: 20px;*/
+}
+
+.producto-container{
+	margin: 1em;
+}
+
+.producto-nombre {
+	float: right;
+	text-align: center;
+}
+
+.contratar {
+	background: #003375;
+	color: #FFF;
+	padding: 1em;
+	font-size: 1.25em;
+	margin-right: 2em;	
+}
+
+.contratar:hover {
+	background:#004192;
+	font-weight: bold;
+}
+
+form .contact {
+	float: left;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.contact *{
+	margin-top: .25em;
+	/*display: inline;*/
+	/*margin: .5em;*/
+	/*padding: .5em;*/
+}
+
+.contact input, .contact textarea, .contact select, .contact fieldset{
+	margin-left: -5em;
+}
+
+.contact label{
+
+	/*padding-right: 2em;*/
+
+}
+
+ .checkbox input, .inputs{
+	margin: .125em;
+}
+
+.radio input{
+	margin-right: -30em;
+	margin-left: 1em;
+
+}
+
+.btn {
+	background: #003375;
+	color: #FFF;
+	padding: 1em;
+
+	margin-right: 2em;	
+}
+
+.btn:hover {
+	background:#004192;
+	font-weight: bold;
+}
+
+form .contact{
+	margin-bottom: 2em;
+}
+
+
+.sendButtons{
+	margin-left: 5em;
+
+}
+
+
+ table  tr{
+	border: 1px solid #000;
+}
+
+ table .t{
+	font-size: 1.25em;
+	font-weight: bold;
+ }
+
+/*mobile*/
+@media (max-width: 728px){
+	#nav-menu {
+		border-bottom: none;
+		font-size: .65em;
+		float: none;
+	}
+	
+	#nav-responsive {
+
+	}
+
+	.last{
+		position: relative;
+		right: -40px;
+	}
+	#nav-responsive {
+		display: block;
+	}
+
+	#nav-responsive ul {
+		float: left;
+	}
+	
+	.search-bar, .search-icon, img .search-icon {
+		display: none;
+	}
+
+	.producto-nombre{
+		display: none;
+	}
+
+	.contratar{
+		margin-bottom: 1em;
+	}
+}
