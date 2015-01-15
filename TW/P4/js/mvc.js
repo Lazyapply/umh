@@ -13,3 +13,15 @@ $(function() {
     })
  
 });
+
+document.addEventListener( 'toogleToolTip' , toogleToolTip, true);
+
+
+
+function toogleToolTip(){
+	alert("mensaje");
+}
+
+
+
+

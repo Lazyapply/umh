@@ -401,6 +401,25 @@ form .contact{
 	font-weight: bold;
  }
 
+
+.tooltip {
+	position: absolute;
+	max-width: 250px;
+	float: left;
+	height: auto;
+	z-index: 101;
+	opacity: 0.95;
+	background-color: #142471;
+	color: white;
+	border-radius: 10px;
+	font-size: .6em;
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
 /*mobile*/
 @media (max-width: 728px){
 	#nav-menu {
