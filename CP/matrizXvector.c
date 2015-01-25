@@ -5,10 +5,11 @@
 int main(int argc, char *argv[]){
 
 	int 		nproces, myrank, i, j, tam, tbloq;
-	int 		**matriz, *vector, *matrizParcial;
+	int 		**matriz, *vector, *matrizParcial, *resultadoParcial, *total;
 	MPI_Status 	status;
 
-
+	total = (int*)malloc(sizeof(int));
+	resultadoParcial = (int*)malloc(sizeof(int));
 
 	MPI_Init(&argc, &argv);
 	MPI_Comm_size(MPI_COMM_WORLD, &nproces);
@@ -32,16 +33,24 @@ int main(int argc, char *argv[]){
 				matriz[i][j] = rand()%9;
 		}
 
+		for(i=0;i<tam;i++){
+			for(j=0;j<tam;j++)
+				printf(" %d ", matriz[i][j]);
+
+			printf(" | %d\n", vector[i]);
+		}
+
 		//enviamos el vector
 		
 		//MPI_Bcast(matrizB[i], tamMatriz, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 		MPI_Bcast(vector, tam, MPI_INT, 0, MPI_COMM_WORLD);
 		
 		//enviamos los trozos de la matriz
-		for(i=1;i<nproces;i++){
+		for(i=0;i<nproces;i++){
 			//MPI_Send(matrizA[tamBloque*i+j], tamMatriz, MPI_DOUBLE, i, 5, MPI_COMM_WORLD);
 			MPI_Send(matriz[i], tam, MPI_INT, i, 4, MPI_COMM_WORLD);
 		}
+		matrizParcial = matriz[0];
 	}
 	else{
 		matrizParcial = (int*)malloc(tam*sizeof(int));
@@ -63,18 +72,34 @@ int main(int argc, char *argv[]){
 
 	}
 
-	printf("\tSoy el proceso: %d de %d procesos y mi vector es: ", myrank, nproces);
-	for(i=0;i<tam;i++)
-		printf(" %d ", vector[i]);
+	// printf("\tSoy el proceso: %d de %d procesos y mi vector es: ", myrank, nproces);
+	// for(i=0;i<tam;i++)
+	// 	printf(" %d ", vector[i]);
 
-	printf("\n");
+	// printf("\n");
 
-	printf("\tSoy el proceso: %d de %d procesos y mi subMatriz es: ", myrank, nproces);
-	for(i=0;i<tam;i++)
-		printf(" %d ", matrizParcial[i]);
+	// printf("\tSoy el proceso: %d de %d procesos y mi subMatriz es: ", myrank, nproces);
+	// for(i=0;i<tam;i++)
+	// 	printf(" %d ", matrizParcial[i]);
 	
-	printf("\n");
+	// printf("\n");
+	// 
+	
+
+	//operaciones parciales 
+	for(i=0;i<tam;i++)
+		resultadoParcial[0] += matrizParcial[i] * vector[i];
+
+	printf("Soy el %d , resultado: %d\n", myrank, resultadoParcial[0]);
 
 
+	//reducimos deben ser punteros el operando y el resultado
+
+		MPI_Reduce(resultadoParcial, total,2, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+	
+
+	if(myrank == 0){
+		printf("Resultado total: %d\n", total[0]);
+	}
 	MPI_Finalize();
 }
