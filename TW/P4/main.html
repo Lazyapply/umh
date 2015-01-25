@@ -10,9 +10,9 @@
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/responsiveGrid.css"/>
 	<link rel="stylesheet" href="css/main.css"/>
-	<link  href="js/mvc.js">
+	
 </head>
-<body>
+<body onload="inicio()">
 	<div id="container" class="l-12 m-12 x-12">
 		<!-- header -->
 			<header id="header" class="l-12 m-12 x-12">
@@ -28,10 +28,10 @@
 
 							<ul>
 								<li>
-									<div id="ttInicio" class="tooltip">
+									<div id="ttInicio" class="tooltip hidden">
 										<p>En esta sección tendrá toda la informaicón principal de nuestros servicios</p>
 									</div>
-									<a href="main.html">Inicio</a>
+									<a id="inicio"href="main.html">Inicio</a>
 									<div class="submenu">
 										<ul>
 											<li><a href="#">Presentaci&oacute;n</a></li>
@@ -43,21 +43,21 @@
 								</li>
 								<li>
 									<div id="ttDominio" class="tooltip hidden">
-										<p>En esta sección tendrá toda la informaicón principal de nuestros servicios</p>
+										<p>En esta sección tendrá toda la informaicón sobre nuestras ofertas en dominios</p>
 									</div>
-									<a href="#">Dominios</a>
+									<a id="dominio" href="#">Dominios</a>
 								</li>
 								<li>
 									<div id="ttHosting" class="tooltip hidden">
-										<p>En esta sección tendrá toda la informaicón principal de nuestros servicios</p>
+										<p>Toda la información de nuestros hosting aquí</p>
 									</div>
-									<a href="#">Hosting</a>
+									<a id="hosting" href="#">Hosting</a>
 								</li>
 								<li>
 									<div id="ttServidores" class="tooltip hidden">
-										<p>En esta sección tendrá toda la informaicón principal de nuestros servicios</p>
+										<p>Si buscas servidores dedicados, esta es tu sección</p>
 									</div>
-									<a href="#" >Servidores</a>
+									<a id="servidores" href="#" >Servidores</a>
 									<div class="submenu last">
 										<ul>
 											<li><a href="servidor-windows.html">Windows Server</a></li>
@@ -175,7 +175,7 @@
 	</div>
 	</div>
 
-
+<script type="text/javascript" src="js/mvc.js"></script>
 
 </body>
 </html>

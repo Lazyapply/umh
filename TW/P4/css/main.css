@@ -406,6 +406,8 @@ form .contact{
 	position: absolute;
 	max-width: 250px;
 	float: left;
+	left: 1px;
+	top: 5px;
 	height: auto;
 	z-index: 101;
 	opacity: 0.95;
