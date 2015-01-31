@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html version="-//W3C//DTD XHTML 1.1//EN"
+      xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/1999/xhtml
+                          http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"
+>
+<head>
+	<title>Calculadora de ritmos</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+	<link rel="stylesheet" href="css/calc.css"/>
+	<script type="text/javascript" src="js/calc.js"></script>
+</head>
+<body>
+	<form id="formulario" name="formulario" action="#" method="get" onsubmit="return calcular()">
+		<table id="tabla">
+			<tr>
+				<th colspan="2">Calculadora de ritmos</th>
+			</tr>
+			<tr>
+				<td>
+					<span>Distancia</span>
+				</td>
+				<td>
+					<input type="text" name="distancia"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Ritmo</span>
+				</td>
+				<td>
+					<input type="text" name="ritmo"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>Tiempo total</span>
+				</td>
+				<td>
+					<input type="text" name="ttotal"/>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="reset"/></td>
+				<td><input type="submit" value="Calcular"/></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

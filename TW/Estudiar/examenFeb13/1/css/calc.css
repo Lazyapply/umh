@@ -1,0 +1,31 @@
+body{
+	font-family: arial;
+	font-size: 10px;
+
+	display: block;
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+}
+
+#forumulario{
+	width: 100%;
+	margin: 0 auto;
+}
+
+table{
+	width: 33%;
+	margin: 0 auto;
+	border: 1px solid blue;
+}
+
+#formulario > table th {
+	background-color: blue;
+	color: white;
+	text-align: center;
+}
+
+.incorrect {
+	border: 2px solid red;
+}
