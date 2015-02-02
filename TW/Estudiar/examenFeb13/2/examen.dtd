@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!ELEMENT examen (cuestion)+>
+
+	<!ELEMENT cuestion (materia, enunciado, (respuesta)+)>
+	<!ATTLIST cuestion 
+		codigo 		ID 		#REQUIRED
+		autor       CDATA   #REQUIRED
+	>
+
+	<!ELEMENT materia (#PCDATA)>
+	<!ELEMENT enunciado (#PCDATA)>
+	
+	<!ELEMENT respuesta (#PCDATA)>
+	<!ATTLIST respuesta
+		correcta 	(si|no) 	#REQUIRED
+	>

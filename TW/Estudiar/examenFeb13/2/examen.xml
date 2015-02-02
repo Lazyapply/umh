@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?>
+<!--<!DOCTYPE examen SYSTEM "examen.dtd">-->
+<!--<examen>-->
+<examen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="examen.xsd">
+	<cuestion autor="Anotnio" codigo="a1">
+		<materia>HTML</materia>
+		<enunciado>HTML es un:</enunciado>
+		<respuesta correcta="si">Lenguaje de marcado de hipertexto</respuesta>
+		<respuesta correcta="no">Protocolo de comunicaciones para web</respuesta>
+		<respuesta correcta="no">Ninguna de las anteriores</respuesta>
+	</cuestion>
+	<cuestion autor="Pedro" codigo="a2">
+		<materia>XML</materia>
+		<enunciado>XML es un:</enunciado>
+		<respuesta correcta="no">Rollo impresionante</respuesta>
+		<respuesta correcta="si">Lenguaje extensible de marcado</respuesta>
+		<respuesta correcta="no">Las dos anteriores son ciertas</respuesta>
+	</cuestion>
+</examen>
