@@ -10,9 +10,9 @@
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/responsiveGrid.css"/>
 	<link rel="stylesheet" href="css/main.css"/>
-
+	
 </head>
-<body onload="inicio()">
+<body onload="getDate()">
 	<div id="container" class="l-12 m-12 x-12">
 		<!-- header -->
 			<header id="header" class="l-12 m-12 x-12">
@@ -95,49 +95,71 @@
 		<!-- body -->
 			<div id="content" class="l-12 m-12 x-12">
 				<div class="panel l-12 m-12 x-12">
-					<div class="l-5">
-						<img src="img/servers.png" alt="server-img" />
-					</div>
-					<div class="l-7">
-						
-						
-						<section class="panel-text">
-						<!-- Los h's no pueden ser un enlace -->
-						<h2>Los mejores servidores del mercado</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro laborum magnam 	libero velit neque, praesentium quod voluptatum quas laboriosam, quia vero consequatur 	sapiente itaque quibusdam labore ullam. Quas facilis, est.</p>
+					<h2>Pedido</h2>
+					<hr>
+					<form class="pedido" action="#" method="POST" accept-charset="utf-8">
+					<fieldset>
+							<legend>Datos del pedido</legend>
+							<label  class="l-6 m-6 x-12" for="fecha">Fecha de pedido</label>
+							<input  class="l-6 m-6 x-12" id="fechaD" name="fecha" type="date" onfocus="getDate()" required>
 
-						</section>
-					</div>
+							<label  class="l-6 m-6 x-12" for="producto">Producto</label> 
+							<input  class="l-6 m-6 x-12" type="text" name="producto" value="Producto Ref: 444334 Hosting básico" disabled>
+							<div class="l-12 m-12 x-12"><br></div>
+						</fieldset>
+						<fieldset>
+							<legend>Datos del cliente</legend>
+						
+							<label  class="l-6 m-6 x-12" for="nombre">Nombre</label> 
+							<input  class="l-6 m-6 x-12" type="text" name="nombre" placeholder="Introduzca su nombre" required>
+
+							<label  class="l-6 m-6 x-12" for="apellidos">Apellidos</label> 
+							<input  class="l-6 m-6 x-12" type="text" name="apellidos" placeholder="Introduzca sus apellidos" required>
+
+							<label  class="l-6 m-6 x-12" for="nif">NIF</label> 
+							<input  class="l-6 m-6 x-12" type="text" name="nif" placeholder="p.e. 48666637V" onblur="checkDNI(this.value)" required>
+							
+							<label  class="l-6 m-6 x-12" for="direccion">Dirección</label> 
+							<input  class="l-6 m-6 x-12" type="text" name="direccion" required>
+
+							<label  class="l-6 m-6 x-12" for="localidad">Localidad</label> 
+							<input  class="l-6 m-6 x-12" type="text" name="localidad" required>
+
+							<label  class="l-6 m-6 x-12" for="provincia">Provincia</label> 
+							<input  class="l-6 m-6 x-12" type="text" name="provincia" required>
+
+							<label  class="l-6 m-6 x-12" for="cp">C.P.</label> 
+							<input  class="l-6 m-6 x-12" max="99999" type="number" name="cp" required>
+
+							<label  class="l-6 m-6 x-12" for="cuentaBanco">Cuenta bancaria</label> 
+							<input  class="l-6 m-6 x-12" type="text" maxlength="20" placeholder="13315000113857999119" name="cuentaBanco" onblur="checkCCC(this.value)" required>
+
+							<label  class="l-6 m-6 x-12" for="tlf">Teléfono</label> 
+							<input  class="l-6 m-6 x-12" type="text" maxlength="12" name="tlf" required>
+						</fieldset>
+						
+						<fieldset>
+							<legend>Datos opcionales</legend>
+
+							<label  class="l-6 m-6 x-12" for="fnac">Fecha de nacimiento</label> 
+							<input  class="l-6 m-6 x-12" type="date"  name="fnac" >
+
+							<input class="l-6 m-6 x-12 " type="radio" name="sexo" value="opt_hombre" id="opt_hombre"/>Hombre<br/>
+							<input class="l-6 m-6 x-12 " type="radio" name="sexo" value="opt_mujer" id="opt_mujer"/>Mujer
+
+							<label class="l-6 m-6 x-12" for="profesion">Profesión</label>
+							<select class="l-6 m-6 x-12" name="profesion" id="profesion">
+								<option value="administradorSis">Administrador de sistemas</option>
+								<option value="desarrollador">Desarrollador</option>
+								<option value="estudiante">Estudiante</option>
+								<option value="Profesor">Profesor</option>
+							</select>
+						</fieldset>
+
+						<input type="submit"  value="enviar">
+					</form>
+
 				</div>
-				<div class="panel l-12 m-12 x-12">
-					<div class="l-5">
-						<img src="img/help-center.jpg" alt="helpcenter-img" />
-					</div>
-					<div class="l-7">
-						
-						<section class="panel-text">
-						<!-- Los h's no pueden ser un enlace -->
-						<h2>Atenci&oacute; al cliente 24h, 365 d&iacute;as al a&ntilde;o</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro laborum magnam 	libero velit neque, praesentium quod voluptatum quas laboriosam, quia vero consequatur 	sapiente itaque quibusdam labore ullam. Quas facilis, est.</p>
-
-						</section>
-					</div>
-				</div>
-				<div class="panel l-12 m-12 x-12">
-					<div class="l-5">
-						<img src="img/bussiness.jpg" alt="bussiness-img" />
-					</div>
-					<div class="l-7">
-						
-						
-						<section class="panel-text">
-						<!-- Los h's no pueden ser un enlace -->
-						<h2>Nuestros sistemas son totalmente escalables. Preparados para el futuro.</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro laborum magnam 	libero velit neque, praesentium quod voluptatum quas laboriosam, quia vero consequatur 	sapiente itaque quibusdam labore ullam. Quas facilis, est.</p>
-
-						</section>
-					</div>
-			</div>
 		<!-- end container -->
 
 		<!-- footer -->
