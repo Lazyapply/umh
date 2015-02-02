@@ -2,7 +2,7 @@
 <!--<!DOCTYPE examen SYSTEM "examen.dtd">-->
 <!--<examen>-->
 <examen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="examen.xsd">
-	<cuestion autor="Anotnio" codigo="a1">
+	<cuestion autor="Antonio" codigo="a1">
 		<materia>HTML</materia>
 		<enunciado>HTML es un:</enunciado>
 		<respuesta correcta="si">Lenguaje de marcado de hipertexto</respuesta>
