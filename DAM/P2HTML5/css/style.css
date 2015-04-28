@@ -209,11 +209,14 @@ p{
 	
 }
 
-.content img.float{
+figure{
 	float:right;
 	margin:15px;
 }
 
+figcaption{
+	text-align: right;
+}
 
 
 .blue-background{
