@@ -251,7 +251,14 @@ figcaption{
 	
 }
 
-.player{
+.player, .navigation-player{
 	background-color: #60AF51;
 }
 
+.navigation-player{
+	max-height: 29px;
+}
+
+i:hover{
+	color: white;
+}

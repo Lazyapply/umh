@@ -25,3 +25,43 @@ var files = 'css';
 }
 
 document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+function previous(){
+	alert("previous");
+}
+
+function next(){
+	alert("next");
+}
+
+function play(){
+	alert("play");
+}
+
+function pause(){
+	alert("pause");
+}
+
+function stop(){
+	alert("stop");
+}
+
+function volumen(){
+	
+	var valor = document.getElementById('barVolumen').value;
+	valor = valor - 1;
+	alert(valor);
+	
+}
+
+function mute(){
+	
+	var btn = document.getElementById("btnMute");
+
+	if(btn.className == 'mdi-av-volume-up small')
+		btn.className = "mdi-av-volume-off small";
+	else
+		btn.className = "mdi-av-volume-up small";
+	
+}
