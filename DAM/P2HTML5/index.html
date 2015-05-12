@@ -82,24 +82,55 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row info-player">
               <div class="col s12 card player">
-               <audio id="player"></audio>
+              <div class="row">
+                <div class="col s4">
+                 
+                    <audio id="player"></audio>
+                    <i class="mdi-av-my-library-music large valign"></i>
+                  
+                </div>
+                <div class="col s8">
+                    <div class="row data-info">
+                      <div class="col s4">
+                        <h6 class="title">Título:</h6>  
+                      </div>
+                      <div class="col s8">
+                        <h6>Master of puppets</h6>
+                      </div>
+                    </div>
+                    <div class="row ">
+                      <div class="col s12">
+                        <div class="progress" id="progressField" onclick="changeStart()">
+                          <div id="progressBar"  class="determinate" style="width: 0%"></div>
+                      </div>
+                      </div>
+                    </div>
+                </div>
               </div>
+              </div>
+              
           </div>
-           <div class="row">
+           <div class="row navigation">
               <div class="col s6 navigation-player center-align">
-                 <i id="btnPrevious" onclick="previous()" class="mdi-av-skip-previous small"></i>
-                 <i id="btnPlay" onclick="play()" class="mdi-av-play-arrow small"></i>
-                 <i id="btnPause" onclick="pause()" class="mdi-av-pause small"></i>
-                 <i id="btnStop" onclick="stop()" class="mdi-av-stop small"></i>
-                 <i id="btnNext" onclick="next()" class="mdi-av-skip-next small"></i>
+                  <div class="valign-wrapper">
+                   <i id="btnPrevious" onclick="previous()" class="mdi-av-skip-previous small valign"></i>
+                   <i id="btnPlay" onclick="play()" class="mdi-av-play-arrow small valign"></i>
+                   <i id="btnPause" onclick="pause()" class="mdi-av-pause small valign"></i>
+                   <i id="btnStop" onclick="stop()" class="mdi-av-stop small valign"></i>
+                   <i id="btnNext" onclick="next()" class="mdi-av-skip-next small valign"></i>
+                 </div>
               </div>
               <div class="col s2 navigation-player center-align">
-                  <i id="btnMute" onclick="mute()" class="mdi-av-volume-up small"></i>
+                 <div class="valign-wrapper">
+                  <i id="btnMute" onclick="mute()" class="mdi-av-volume-up small valign"></i>
+                  </div>
               </div>
               <div class="col s4 range-field navigation-player">
-                    <input id="barVolumen" onchange="volumen()" type="range" min="0" max="100" />
+                  <div class="valign-wrapper">
+                    <input class="valign" id="barVolumen" onchange="volumen()" type="range" min="0" max="100" />
+                    </div>
               </div>
           </div>
         </div>

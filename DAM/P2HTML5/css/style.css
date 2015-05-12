@@ -259,6 +259,33 @@ figcaption{
 	max-height: 29px;
 }
 
-i:hover{
+.navigation-player i{
+	top: 20px;
+}
+
+.valign-wrapper i:hover{
 	color: white;
+}
+
+i.mdi-av-my-library-music:hover{
+	color: #061C37;
+}
+
+.navigation div{
+	min-height: 50px;
+
+}
+.data-info{
+	margin-top: 20px;
+	background-color: white;
+}
+
+.info-player{
+	margin-bottom: 0px;
+	padding-bottom: .1em;
+
+}
+
+.title{
+	font-weight: bold;
 }

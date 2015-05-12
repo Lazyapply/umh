@@ -59,9 +59,23 @@ function mute(){
 	
 	var btn = document.getElementById("btnMute");
 
-	if(btn.className == 'mdi-av-volume-up small')
-		btn.className = "mdi-av-volume-off small";
+	if(btn.className == 'mdi-av-volume-up small valign')
+		btn.className = "mdi-av-volume-off small valign";
 	else
-		btn.className = "mdi-av-volume-up small";
+		btn.className = "mdi-av-volume-up small valign";
 	
+}
+
+
+function changeStart(){
+	//alert("cambiando posición");
+	var ancho = document.getElementById("progressField").offsetWidth;
+	var paso = ancho/100;
+	var aumento = paso;
+	//alert(aumento);
+	while(aumento < ancho){
+		document.getElementById("progressBar").style.width = aumento + "%";
+		aumento += aumento;
+	}
+	//alert(aumento)
 }
