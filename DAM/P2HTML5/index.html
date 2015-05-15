@@ -1,81 +1,172 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<title>Inicio · Practica 2 Diseño de aplicaciones multimedia Html5</title>
-</head>
+  <head>
+    <title>Inicio · Practica 2 Diseño de aplicaciones multimedia Html5</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="js/myJs.js"></script>
+
+  </head>
 
 <body>
+
 <div id="container">
+  <header> <!-- header start -->
+  	<div id="header">
+      <div class="row">
+        <div class="col s8">
+                <h3><span class="blue-text">Diseño</span> de aplicaciones multimedia</h3>
+        </div>
+        <div class="col s4">
+                <h4>Practica 2 <span class="white-text">HTML5</span></h4>
+        </div>
+      </div>
 
-	<div id="header">
-        <h1><span class="blue-text">Diseño</span> de aplicaciones multimedia</h1>
-        <h2>Practica 2 <span class="white-text">HTML5</span></h2>
-  </div><!--header end-->
-          
- 
-  <div id="menu">
-        <ul>
-            <li class="menuitem"><a href="index.html">Inicio</a></li>
-            <li class="menuitem"><a href="about.html">Sobre nosotros</a></li>
-            <li class="menuitem"><a href="contact.html">Contacto</a></li>
+    </div><!--header end-->
+            
+   
+    <nav id="menu"><!-- nav start -->
+          <ul>
+              <li class="menuitem"><a href="index.html">Inicio</a></li>
+              <li class="menuitem"><a href="about.html">Sobre nosotros</a></li>
+              <li class="menuitem"><a href="contact.html">Contacto</a></li>
+          </ul>
+    </nav><!--nav end-->
+  </header><!-- header end -->
+
+	<main>
+    <aside id="leftmenu">
+         <h3>Apartados</h3>
+         <ul>
+  			<li><a href="#apartado1">Estructura</a></li>
+              <li><a href="#apartado2">Audio</a></li>
+              <li><a href="#apartado3">Video</a></li>
+              <li><a href="#apartado4">Canvas</a></li>
+  			<li><a href="#apartado5">SVG</a></li>
         </ul>
-  </div><!--menu end-->
-	
-  <div id="leftmenu">
-       <h3>Apartados</h3>
-       <ul>
-			<li><a href="#apartado1">Estructura</a></li>
-            <li><a href="#apartado2">Audio</a></li>
-            <li><a href="#apartado3">Video</a></li>
-            <li><a href="#apartado4">Canvas</a></li>
-			<li><a href="#apartado5">SVG</a></li>
-      </ul>
-  </div><!--leftmenu end-->
-  
-  <div id="section">
-  	<div id="apartado1" class="content">
-      <h2>Apartado 1 </h2>
-        <img class="float" src="images/web.jpg" alt="Diseño de aplicaciones multimedia">
-  	  <h3>Estructura</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nulla ex, vulputate in magna non, gravida vestibulum leo. Etiam ac justo id turpis bibendum aliquet sed in nibh. Vestibulum pulvinar, lorem sit amet lobortis cursus, libero quam iaculis sem, fermentum pellentesque elit nunc sit amet eros. Fusce congue turpis id tellus iaculis porttitor. Pellentesque rhoncus vel sem quis posuere. Vivamus vitae tincidunt risus. Maecenas ac urna aliquet, vestibulum tortor a, venenatis ante. Aliquam sit amet molestie sem. Proin ac condimentum mi, non aliquam nisi. Nam interdum, ex et consequat dapibus, massa sem pellentesque erat, egestas ornare nisl dolor at eros. Vivamus id diam turpis. Suspendisse dignissim ac magna faucibus placerat. Nunc mattis commodo massa euismod blandit. Sed congue elit dui, suscipit tempus ex placerat tristique. Nunc pellentesque rhoncus magna tristique iaculis. Quisque accumsan blandit lectus in vestibulum.
-      </p>
-      <p>
-      Fusce dignissim, odio in pellentesque commodo, enim massa consequat odio, at dapibus enim ligula ut tellus. Vestibulum faucibus varius turpis sed suscipit. Nam enim urna, dignissim ac tortor mattis, interdum scelerisque arcu. Aenean in massa sit amet nisl gravida egestas in sed lectus. Proin consequat metus tincidunt, blandit leo non, eleifend enim. Mauris feugiat, enim sit amet dapibus aliquet, ligula arcu luctus tortor, ac feugiat eros magna vitae ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus condimentum faucibus nunc a feugiat. Nam porttitor ultrices ultrices.
-      </p>
-      <p>
-      Ut imperdiet nisi pretium euismod consequat. Donec neque purus, sodales quis pharetra sed, rutrum a enim. Ut libero risus, dapibus id enim sed, condimentum sagittis ex. Vivamus ante dui, aliquet et urna a, convallis mollis lectus. Sed ut hendrerit enim. Nulla efficitur mauris hendrerit mattis tincidunt. Integer volutpat quis mi non posuere. Sed gravida risus sit amet turpis sollicitudin, id dictum dolor mattis. Ut ultricies ex a bibendum venenatis. Vivamus feugiat gravida convallis. Donec posuere leo sed est laoreet mollis. Ut tempor ligula sed purus molestie, ut condimentum nulla rhoncus.</p>
-    </div><!--content end-->
-  	<div id="apartado2" class="content">
-      <h2>Apartado 2 </h2>
-      <h3>Audio</h3>
-      <p></p>
-  	</div><!--content end-->
-	<div id="apartado3" class="content">
-      <h2>Apartado 3</h2>
-      <h3>Video</h3>
-      <p></p>
-  	</div><!--content end-->
-    <div id="apartado4" class="content">
-      <h2>Apartado 4 </h2>
-  	 	<h3>Canvas</h3>
-      <p></p>
-    </div><!--content end-->
-	<div id="apartado5" class="content">
-      <h2>Apartado 5 </h2>
-  	 	<h3>SVG</h3>
-      <p></p>
-    </div><!--content end-->
+    </aside><!--leftmenu end-->
     
-  </div><!--section end-->
- 
-</div>
+    <section id="section">
+    	<article id="apartado1" class="content">
 
- <div id="footer">
+      <hgroup>
+          <h2>Apartado 1</h2>
+            
+      	  <h3>Estructura</h3>
+      </hgroup>
+    
+      <figure class="float">
+        <img  src="images/web.jpg" alt="Diseño de aplicaciones multimedia">
+        <figcaption>Logo web de la práctica</figcaption>
+      </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nulla ex, vulputate in magna non, gravida vestibulum leo. Etiam ac justo id turpis bibendum aliquet sed in nibh. Vestibulum pulvinar, lorem sit amet lobortis cursus, libero quam iaculis sem, fermentum pellentesque elit nunc sit amet eros. Fusce congue turpis id tellus iaculis porttitor. Pellentesque rhoncus vel sem quis posuere. Vivamus vitae tincidunt risus. Maecenas ac urna aliquet, vestibulum tortor a, venenatis ante. Aliquam sit amet molestie sem. Proin ac condimentum mi, non aliquam nisi. Nam interdum, ex et consequat dapibus, massa sem pellentesque erat, egestas ornare nisl dolor at eros. Vivamus id diam turpis. Suspendisse dignissim ac magna faucibus placerat. Nunc mattis commodo massa euismod blandit. Sed congue elit dui, suscipit tempus ex placerat tristique. Nunc pellentesque rhoncus magna tristique iaculis. Quisque accumsan blandit lectus in vestibulum.
+        </p>
+        <p>
+        Fusce dignissim, odio in pellentesque commodo, enim massa consequat odio, at dapibus enim ligula ut tellus. Vestibulum faucibus varius turpis sed suscipit. Nam enim urna, dignissim ac tortor mattis, interdum scelerisque arcu. Aenean in massa sit amet nisl gravida egestas in sed lectus. Proin consequat metus tincidunt, blandit leo non, eleifend enim. Mauris feugiat, enim sit amet dapibus aliquet, ligula arcu luctus tortor, ac feugiat eros magna vitae ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus condimentum faucibus nunc a feugiat. Nam porttitor ultrices ultrices.
+        </p>
+        <p>
+        Ut imperdiet nisi pretium euismod consequat. Donec neque purus, sodales quis pharetra sed, rutrum a enim. Ut libero risus, dapibus id enim sed, condimentum sagittis ex. Vivamus ante dui, aliquet et urna a, convallis mollis lectus. Sed ut hendrerit enim. Nulla efficitur mauris hendrerit mattis tincidunt. Integer volutpat quis mi non posuere. Sed gravida risus sit amet turpis sollicitudin, id dictum dolor mattis. Ut ultricies ex a bibendum veennatis. Vivamus feugiat gravida convallis. Donec posuere leo sed est laoreet mollis. Ut tempor ligula sed purus molestie, ut condimentum nulla rhoncus.</p>
+      </article><!--content end-->
+    	
+
+
+      <article id="apartado2" class="content">
+        <div class="container">
+
+
+          <div class="row">
+            <div class="col s12 ">
+              <h2 class="center-align">Apartado 2 </h2>
+            </div>
+          </div>
+
+          <div class="row info-player">
+              <div class="col s12 card player">
+              <div class="row">
+                <div class="col s4">
+                 
+                    <audio id="player"></audio>
+                    <i class="mdi-av-my-library-music large valign"></i>
+                  
+                </div>
+                <div class="col s8">
+                    <div class="row data-info">
+                      <div class="col s4">
+                        <h6 class="title">Título:</h6>  
+                      </div>
+                      <div class="col s8">
+                        <h6>Master of puppets</h6>
+                      </div>
+                    </div>
+                    <div class="row ">
+                      <div class="col s12">
+                        <div class="progress" id="progressField" onclick="changeStart()">
+                          <div id="progressBar"  class="determinate" style="width: 0%"></div>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+              
+          </div>
+           <div class="row navigation">
+              <div class="col s6 navigation-player center-align">
+                  <div class="valign-wrapper">
+                   <i id="btnPrevious" onclick="previous()" class="mdi-av-skip-previous small valign"></i>
+                   <i id="btnPlay" onclick="play()" class="mdi-av-play-arrow small valign"></i>
+                   <i id="btnPause" onclick="pause()" class="mdi-av-pause small valign"></i>
+                   <i id="btnStop" onclick="stop()" class="mdi-av-stop small valign"></i>
+                   <i id="btnNext" onclick="next()" class="mdi-av-skip-next small valign"></i>
+                 </div>
+              </div>
+              <div class="col s2 navigation-player center-align">
+                 <div class="valign-wrapper">
+                  <i id="btnMute" onclick="mute()" class="mdi-av-volume-up small valign"></i>
+                  </div>
+              </div>
+              <div class="col s4 range-field navigation-player">
+                  <div class="valign-wrapper">
+                    <input class="valign" id="barVolumen" onchange="volumen()" type="range" min="0" max="100" />
+                    </div>
+              </div>
+          </div>
+        </div>
+
+
+    	</article><!--content end-->
+
+
+  	   <article id="apartado3" class="content">
+        <h2>Apartado 3</h2>
+        <h3>Video</h3>
+        <p></p>
+    	</article><!--content end-->
+      <article id="apartado4" class="content">
+        <h2>Apartado 4 </h2>
+    	 	<h3>Canvas</h3>
+        <p></p>
+      </article><!--content end-->
+  	<article id="apartado5" class="content">
+        <h2>Apartado 5 </h2>
+    	 	<h3>SVG</h3>
+        <p></p>
+      </article><!--content end-->
+      
+    </section><!--section end-->
+   
+  </div>
+</main>
+    <footer id="footer">
    
        Diseño de aplicaciones multimedia 2014/2015
 
-    </div><!--foot end-->
+    </footer><!--foot end-->
 
+
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>

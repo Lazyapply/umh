@@ -46,14 +46,19 @@ h2{
 }
 
 h3{
-	font-size:16px;
+	font-size:30px;
 	font-weight:bold;
 	padding:10px 0 10px 0;
 	color:#054dbc;
 }
 
+h5{
+	padding:10px 0 10px 0;
+	color:#054dbc;
+}
+
 h4{
-	font-size:15px;
+	font-size:25px;
 	font-weight:bold;
 	padding-bottom:5px;
 	color:#054dbc;
@@ -86,7 +91,7 @@ p{
 
 #header h2{
 	float:right;
-	padding:40px 20px 0 0;
+	/*padding:40px 20px 0 0;*/
 	text-align:right;
 	color:#A9D1FA;
 	
@@ -98,7 +103,8 @@ p{
 	clear:both;
 	width:960px;
 	height:54px;
-
+	margin-top: -22px;
+	background-color: #1C478E;
 }
 
 #menu ul {
@@ -117,16 +123,16 @@ p{
 
 #menu a {
 	float: left;
-	height: 36px;
+	height: auto;
 	display: block;
 	text-align: center;
 	text-decoration: none;
 	color: #ffffff;
 	font-weight: bold;
-	padding-top: 18px;
+	/*padding-top: 18px;*/
 	font-size: 15px;
-	padding-left:13px;
-	padding-right:13px;
+	/*padding-left:13px;*/
+	/*padding-right:13px;*/
 	
 }
 
@@ -171,8 +177,10 @@ p{
 
 #leftmenu ul li{
 	list-style: none;
-	padding:15px 0 8px 0;
+	padding: 8px 0 8px 0;
 	border-bottom:#fff dashed 1px;
+	margin-right: 10px;
+	width: inherit;
 	
 }
 
@@ -209,11 +217,14 @@ p{
 	
 }
 
-.content img.float{
+figure{
 	float:right;
 	margin:15px;
 }
 
+figcaption{
+	text-align: right;
+}
 
 
 .blue-background{
@@ -240,5 +251,41 @@ p{
 	
 }
 
+.player, .navigation-player{
+	background-color: #60AF51;
+}
 
+.navigation-player{
+	max-height: 29px;
+}
 
+.navigation-player i{
+	top: 20px;
+}
+
+.valign-wrapper i:hover{
+	color: white;
+}
+
+i.mdi-av-my-library-music:hover{
+	color: #061C37;
+}
+
+.navigation div{
+	min-height: 50px;
+
+}
+.data-info{
+	margin-top: 20px;
+	background-color: white;
+}
+
+.info-player{
+	margin-bottom: 0px;
+	padding-bottom: .1em;
+
+}
+
+.title{
+	font-weight: bold;
+}
