@@ -1,0 +1,3 @@
+[05/14/2015 8:24 PM] - SUCCESS : Cronjob_Handler - Hourly cron handler got fired.
+[05/14/2015 8:24 PM] - SUCCESS : Cronjob_Handler - Daily cron handler got fired.
+[05/14/2015 8:24 PM] - SUCCESS : DB Cleanup - checking if a cleanup needs to be done now...
