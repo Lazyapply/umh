@@ -1,7 +1,17 @@
 
 function ini(){
 	var player = document.getElementById('player');
+
+	player.ontimeupdate = function(){
+		console.log("vamos")
+	}
+
 }
+
+	
+	
+
+
 
 function testFiles(){
 	// Check for the various File API support.
@@ -41,6 +51,7 @@ function next(){
 
 function play(){
 	player.play();
+	//showTime()
 }
 
 function pause(){
@@ -52,6 +63,27 @@ function stop(){
 	player.currentTime = 0;
 
 }
+
+function secondToMinutes(valor){
+	var min, seg, aux;
+	aux = valor;
+	min = valor / 60;
+	min = Math.round(min);
+	seg = valor % 60;
+	seg = Math.round(seg);
+
+	return min + ":" + seg;
+}
+
+
+
+function showTime(){
+	var labelTime = document.getElementById('playerTime');
+	var total = player.duration;
+	var currTime = player.currentTime;
+	labelTime.innerHTML = secondToMinutes(currTime) + "/" +  secondToMinutes(total);
+}
+
 
 function volumen(){
 	

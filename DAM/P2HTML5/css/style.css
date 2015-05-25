@@ -289,3 +289,7 @@ i.mdi-av-my-library-music:hover{
 .title{
 	font-weight: bold;
 }
+
+.playerTime{
+	border: 2px solid #fff; 
+}
