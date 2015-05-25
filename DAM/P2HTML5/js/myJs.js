@@ -1,4 +1,8 @@
 
+function ini(){
+	var player = document.getElementById('player');
+}
+
 function testFiles(){
 	// Check for the various File API support.
 	if (window.File && window.FileReader && window.FileList && window.Blob){
@@ -36,22 +40,35 @@ function next(){
 }
 
 function play(){
-	alert("play");
+	player.play();
 }
 
 function pause(){
-	alert("pause");
+	player.pause();
 }
 
 function stop(){
-	alert("stop");
+	player.pause();
+	player.currentTime = 0;
+
 }
 
 function volumen(){
 	
 	var valor = document.getElementById('barVolumen').value;
-	valor = valor - 1;
-	alert(valor);
+	var btn = document.getElementById("btnMute");
+
+	if(valor == 99)
+		valor = valor + 1;
+
+	if(valor == 0)
+		btn.className = "mdi-av-volume-off small valign";
+	else
+		btn.className = "mdi-av-volume-up small valign";
+
+	player.volume = valor/100;
+
+	
 	
 }
 
@@ -59,10 +76,14 @@ function mute(){
 	
 	var btn = document.getElementById("btnMute");
 
-	if(btn.className == 'mdi-av-volume-up small valign')
+	if(btn.className == 'mdi-av-volume-up small valign'){
 		btn.className = "mdi-av-volume-off small valign";
-	else
+		player.muted = true;
+	}
+	else{
 		btn.className = "mdi-av-volume-up small valign";
+		player.muted = false;
+	}
 	
 }
 
