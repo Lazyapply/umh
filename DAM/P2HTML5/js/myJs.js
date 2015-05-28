@@ -1,15 +1,70 @@
 
 function ini(){
+
+	//cerramos la lista de reproducción
+	document.getElementById("playList").style.display = "none";
 	var player = document.getElementById('player');
 
 	player.ontimeupdate = function(){
 		console.log("vamos")
 	}
 
-}
+	//colores toogle
+	var btn = document.getElementById("showList");
+	var btn2 = document.getElementById("showControls");
+	btn.style.color = 'black';
+	btn2.style.color = 'black';
+
+	//punteros
+	document.getElementById("showList").style.cursor = 'pointer';
+	document.getElementById("showControls").style.cursor = 'pointer';
+	document.getElementById("btnPrevious").style.cursor = 'pointer';
+	document.getElementById("btnPlay").style.cursor = 'pointer';
+	document.getElementById("btnPause").style.cursor = 'pointer';
+	document.getElementById("btnStop").style.cursor = 'pointer';
+	document.getElementById("btnNext").style.cursor = 'pointer';
+	document.getElementById("btnMute").style.cursor = 'pointer';
+	document.getElementById("barVolumen").style.cursor = 'pointer';
+	document.getElementById("progressField").style.cursor = 'pointer';
 
 	
+}
+
+
 	
+function showList(){
+
+	var btn = document.getElementById("showList");
+	var list = document.getElementById("playList");
+
+
+	if(btn.style.color == 'black'){
+		btn.style.color = 'white';
+		list.style.display = "block";
+	}
+	else{
+		btn.style.color = 'black';
+		list.style.display = "none";
+		
+	}
+}
+
+function showControls(){
+
+	var btn = document.getElementById("showControls");
+	var controls = document.getElementById("navigationControls");
+
+
+	if(btn.style.color == 'black'){
+		btn.style.color = 'white';
+		controls.style.display = "block";
+	}
+	else{
+		btn.style.color = 'black';
+		controls.style.display = "none";
+		
+	}
+}
 
 
 

@@ -253,6 +253,7 @@ figcaption{
 
 .player, .navigation-player{
 	background-color: #60AF51;
+	margin-bottom: 5px;
 }
 
 .navigation-player{
@@ -292,4 +293,33 @@ i.mdi-av-my-library-music:hover{
 
 .playerTime{
 	border: 2px solid #fff; 
+}
+
+.no-margin-bottom{
+	margin-bottom: 0px;
+}
+
+.xSmall, .mdi-content-add{
+	margin: 0px;
+	padding: 0px;
+}
+
+.sTiny{
+	font-size: 1.5rem;
+}
+
+.minControls i:hover{
+	color: white;
+}
+
+.white{
+	color: white;
+}
+
+.black{
+	color: black;
+}
+
+#playList{
+	display: none;
 }
