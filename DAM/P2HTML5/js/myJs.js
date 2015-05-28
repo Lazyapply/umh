@@ -1,8 +1,56 @@
+var text;
+var curSong;
+var listSongs;
+var jsListSong = {};
+
+
+$(document).ready(function(){
+	
+
+	$('.collection').click(function(event) {
+		var elemento = $(event.target);
+    	var songName = elemento.text();
+    	var curSong = $('.currentSong');
+    	var curSongText = $('.currentSong').text();
+
+    	curSong.removeClass('currentSong');
+    	elemento.addClass('currentSong');
+
+
+    	/*alert('songName: ' + songName);*/
+    	
+	});
+
+	listSongs = $( ".collection" ).find( "li" );
+	var totalCanciones = listSongs.length;
+	var i=0;
+
+	listSongs.each( function( index, element ){
+	    /*alert( $( this ).text() );*/
+	    /*CONTINUAR*/
+	    var aux = $( this ).text();
+	    jsListSong[i] = aux;
+	    i++;
+	});
+
+	dump_listSong();
+	/*for(i=0;i<totalCanciones;i++){
+		alert(listSongs.contents().get(i));
+	}*/
+	
+});
+
+function dump_listSong(){
+	var total = jsListSong.size();
+	alert(total);
+}
+
 
 function ini(){
 
 	//cerramos la lista de reproducción
 	document.getElementById("playList").style.display = "none";
+
 	var player = document.getElementById('player');
 
 	player.ontimeupdate = function(){
@@ -13,7 +61,7 @@ function ini(){
 	var btn = document.getElementById("showList");
 	var btn2 = document.getElementById("showControls");
 	btn.style.color = 'black';
-	btn2.style.color = 'black';
+	btn2.style.color = 'white';
 
 	//punteros
 	document.getElementById("showList").style.cursor = 'pointer';
@@ -33,6 +81,8 @@ function ini(){
 
 	
 function showList(){
+	//currSong = document.getElementByClassName('currentSong');
+	
 
 	var btn = document.getElementById("showList");
 	var list = document.getElementById("playList");
@@ -52,7 +102,7 @@ function showList(){
 function showControls(){
 
 	var btn = document.getElementById("showControls");
-	var controls = document.getElementById("navigationControls");
+	var controls = document.getElementById("navigation");
 
 
 	if(btn.style.color == 'black'){

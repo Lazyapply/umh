@@ -292,7 +292,7 @@ i.mdi-av-my-library-music:hover{
 }
 
 .playerTime{
-	border: 2px solid #fff; 
+	/*border: 2px solid #fff; */
 }
 
 .no-margin-bottom{
@@ -322,4 +322,22 @@ i.mdi-av-my-library-music:hover{
 
 #playList{
 	display: none;
+}
+
+
+.collection{
+	max-height: 175px;
+	overflow-y: scroll;
+}
+
+.collection .collection-item:hover{
+	background: #BAE5B1;
+	cursor: pointer;
+
+}
+
+.currentSong{
+	background: #90D082 !important;
+	color: #FFF;
+	font-weight: bold;
 }
