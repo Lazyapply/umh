@@ -127,12 +127,12 @@
           </div>
           <div id="playList" class="row player no-margin-bottom">
             <ul class="collection">
-              <li class="collection-item currentSong">01 - Super Colossal</li>
-              <li class="collection-item">02 - Just Like Lightnin'</li>
-              <li class="collection-item">13 - Crowd Chant</li>
-              <li class="collection-item">02 - Dream Song</li>
-              <li class="collection-item">09 - Wormhole Wizards</li>
-              <li class="collection-item">11 - God is Crying</li>
+              <li class="collection-item currentSong" path="music/01 - Super Colossal.mp3">01 - Super Colossal</li>
+              <li class="collection-item" path="music/02 - Just Like Lightnin'.mp3">02 - Just Like Lightnin'</li>
+              <li class="collection-item" path="music/13 - Crowd Chant.mp3">13 - Crowd Chant</li>
+              <li class="collection-item" path="music/02 - Dream Song.mp3">02 - Dream Song</li>
+              <li class="collection-item" path="music/09 - Wormhole Wizards.mp3">09 - Wormhole Wizards</li>
+              <li class="collection-item" path="music/11 - God is Crying.mp3">11 - God is Crying</li>
             </ul>
             <div class="divider"></div>
           </div>
@@ -150,12 +150,13 @@
               <div class="col s2 navigation-player center-align">
                  <div class="valign-wrapper">
                   <i id="btnMute" onclick="mute()" class="mdi-av-volume-up small valign"></i>
+                  <span id="volumeValue" class="volumenValue valign">100</span>
                   </div>
               </div>
               <div class="col s4 range-field navigation-player">
                   <div class="valign-wrapper">
-                    <input class="valign" id="barVolumen" onchange="volumen()" type="range" min="0" max="100" />
-                    </div>
+                    <input class="valign" id="barVolumen" onchange="volumen()" type="range" min="0" max="100" value="100" />
+                  </div>
               </div>
           </div>
           

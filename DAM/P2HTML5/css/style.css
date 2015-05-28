@@ -341,3 +341,8 @@ i.mdi-av-my-library-music:hover{
 	color: #FFF;
 	font-weight: bold;
 }
+
+.volumenValue{
+	/*margin-top: -50px !important;*/
+	font-size: 1rem;
+}

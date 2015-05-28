@@ -1,60 +1,95 @@
 var text;
 var curSong;
+var curSongText;
 var listSongs;
+var lastValue;
+var valor;
+var volumeV;
 var jsListSong = {};
+var playerSrc = document.getElementById("mySource");
+
+
+//-------- START JQUERY --------------------------------------------------------------------
+var barVolumen = $("#slider").data("rangeinput");
 
 
 $(document).ready(function(){
-	
 
-	$('.collection').click(function(event) {
+	//capturar canción pulsada
+	$('.collection').dblclick(function(event) {
 		var elemento = $(event.target);
     	var songName = elemento.text();
-    	var curSong = $('.currentSong');
-    	var curSongText = $('.currentSong').text();
+    	curSong = $('.currentSong');
+    	curSongText = $('.currentSong').text();
 
     	curSong.removeClass('currentSong');
     	elemento.addClass('currentSong');
-
-
-    	/*alert('songName: ' + songName);*/
+    	// o(listSongs);
+    	setSong(jsListSong[listSongs.index(elemento)]);
     	
 	});
 
+	//captura de lista de canciones
 	listSongs = $( ".collection" ).find( "li" );
-	var totalCanciones = listSongs.length;
-	var i=0;
-
-	listSongs.each( function( index, element ){
-	    /*alert( $( this ).text() );*/
-	    /*CONTINUAR*/
-	    var aux = $( this ).text();
-	    jsListSong[i] = aux;
-	    i++;
-	});
-
-	dump_listSong();
-	/*for(i=0;i<totalCanciones;i++){
-		alert(listSongs.contents().get(i));
-	}*/
+	//pasamos de objetos Jquery a array javascript
+	jsListSong = $.makeArray( listSongs );
+	//cambio dinamico de valor
+	$("#barVolumen").mousemove( function(e){	volumen();	});
 	
+
+	o("Documento cargado");
+	// o(listSongs.index(curSong));
 });
 
+//-------- END JQUERY --------------------------------------------------------------------
+
 function dump_listSong(){
-	var total = jsListSong.size();
-	alert(total);
+	var total = jsListSong.length;
+
+	for(c=0;c<total;c++)
+		o("["+ c +"] -> " + getSongNamebyObject(jsListSong[c]));
+
+	o("_______________________");
+	o("Canciones cargadas: " + total);
+	
+
+	//setSong(jsListSong[1]);
+	//test
+	//var songPath = getSongPathbyObject(jsListSong[0]);
+	//o(songPath);
+	// document.getElementById("#test").innerHTML();
 }
 
+function o(valor){ console.log(valor); }
+function getSongPathbyObject(obj){ return obj.getAttribute("path"); }
+function getSongNamebyObject(obj){ return obj.textContent; }
+
+function setSong(songObj){
+	var songName = getSongNamebyObject(songObj);
+	var songPath = getSongPathbyObject(songObj);
+	// var playerSrc = '<source id="mySource" src="'+ songPath +'" type="audio/mpeg" />';
+	
+	playerSrc.setAttribute("src", songPath);
+	
+	play();
+	o(songName + ' - path - ' + songPath + '?? ' + playerSrc);
+	// <source id="mySource" src="music/01 - Super Colossal.mp3" type="audio/mpeg" />
+
+
+}
 
 function ini(){
+
+	dump_listSong();
 
 	//cerramos la lista de reproducción
 	document.getElementById("playList").style.display = "none";
 
 	var player = document.getElementById('player');
-
+	volumen();
+	//cambio de tiempo en el player
 	player.ontimeupdate = function(){
-		console.log("vamos")
+		// o("tiempo cambioando");
 	}
 
 	//colores toogle
@@ -116,36 +151,6 @@ function showControls(){
 	}
 }
 
-
-
-function testFiles(){
-	// Check for the various File API support.
-	if (window.File && window.FileReader && window.FileList && window.Blob){
-	  // Great success! All the File APIs are supported.
-	} 
-	else {
-	  alert('The File APIs are not fully supported in this browser.');
-	}
-}
-
-
-function handleFileSelect(evt) {
-	//var files = evt.target.files; // FileList object
-var files = 'css'; 
-	// files is a FileList of File objects. List some properties.
-	var output = [];
-	for (var i = 0, f; f = files[i]; i++) {
-	output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-	f.size, ' bytes, last modified: ',
-	f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-	'</li>');
-	}
-	document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-}
-
-document.getElementById('files').addEventListener('change', handleFileSelect, false);
-
-
 function previous(){
 	alert("previous");
 }
@@ -155,6 +160,7 @@ function next(){
 }
 
 function play(){
+	player.load();
 	player.play();
 	//showTime()
 }
@@ -192,8 +198,9 @@ function showTime(){
 
 function volumen(){
 	
-	var valor = document.getElementById('barVolumen').value;
+	valor = document.getElementById('barVolumen').value;
 	var btn = document.getElementById("btnMute");
+	volumeV = document.getElementById("volumeValue");
 
 	if(valor == 99)
 		valor = valor + 1;
@@ -203,6 +210,8 @@ function volumen(){
 	else
 		btn.className = "mdi-av-volume-up small valign";
 
+	volumeV.innerHTML = valor;
+	o(valor);
 	player.volume = valor/100;
 
 	
@@ -212,16 +221,34 @@ function volumen(){
 function mute(){
 	
 	var btn = document.getElementById("btnMute");
+	var bVolum = document.getElementById("barVolumen");
+	var curValue = bVolum.getAttribute("value");
+
+	if(curValue != 0)
+			lastValue =  valor;
+			// lastValue = bVolum.getAttribute("value");
+
+	o("RAW->" + valor);
 
 	if(btn.className == 'mdi-av-volume-up small valign'){
 		btn.className = "mdi-av-volume-off small valign";
+		o("no");
+		o(0);
+		
+
+		bVolum.setAttribute("value", 0);
 		player.muted = true;
 	}
 	else{
 		btn.className = "mdi-av-volume-up small valign";
+		bVolum.setAttribute("value", lastValue);
+		o("Si");
+		o(lastValue);
 		player.muted = false;
 	}
-	
+	// volumen();
+	//TODO: no cambia la barra cuando cambias el volumen
+	barVolumen.setValue(parseInt(valor));
 }
 
 
