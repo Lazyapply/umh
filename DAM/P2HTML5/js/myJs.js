@@ -7,9 +7,13 @@ var listSongs;
 var lastValue;
 var valor;
 var total;
+var totalSongs
 var currTime;
 var jsListSong = {};
 //**************************************************
+var titleDisplay = document.getElementById("titleDisplay");
+var currSongIndex = 0;
+var elemento;
 var playerSrc = document.getElementById("mySource");
 var volumeV = document.getElementById("volumeValue");
 
@@ -19,19 +23,7 @@ var barVolumen = $("#slider").data("rangeinput");
 
 $(document).ready(function(){
 
-	//capturar canción pulsada
-	$('.collection').dblclick(function(event) {
-		var elemento = $(event.target);
-    	var songName = elemento.text();
-    	curSong = $('.currentSong');
-    	curSongText = $('.currentSong').text();
-
-    	curSong.removeClass('currentSong');
-    	elemento.addClass('currentSong');
-    	// o(listSongs);
-    	setSong(jsListSong[listSongs.index(elemento)]);
-    	
-	});
+	
 
 	//captura de lista de canciones
 	listSongs = $( ".collection" ).find( "li" );
@@ -40,6 +32,20 @@ $(document).ready(function(){
 	//cambio dinamico de valor
 	$("#barVolumen").mousemove( function(e){	volumen();	});
 	
+	//capturar canción pulsada
+	$('.collection').dblclick(function(event) {
+		elemento = $(event.target);
+    	var songName = elemento.text();
+    	curSong = $('.currentSong');
+    	curSongText = $('.currentSong').text();
+
+    	curSong.removeClass('currentSong');
+    	elemento.addClass('currentSong');
+    	// o(listSongs);
+    	currSongIndex = listSongs.index(elemento);
+    	setSong(jsListSong[currSongIndex]);
+    	
+	});
 
 	o("Documento cargado");
 	// o(listSongs.index(curSong));
@@ -48,13 +54,13 @@ $(document).ready(function(){
 //-------- END JQUERY --------------------------------------------------------------------
 
 function dump_listSong(){
-	var total = jsListSong.length;
+	totalSongs = jsListSong.length;
 
-	for(c=0;c<total;c++)
+	for(c=0;c<totalSongs;c++)
 		o("["+ c +"] -> " + getSongNamebyObject(jsListSong[c]));
 
 	o("_______________________");
-	o("Canciones cargadas: " + total);
+	o("Canciones cargadas: " + totalSongs);
 	
 
 	//setSong(jsListSong[1]);
@@ -76,6 +82,8 @@ function setSong(songObj){
 	playerSrc.setAttribute("src", songPath);
 	player.load();
 	play();
+	titleDisplay.innerHTML = songName;
+	$(".currentSong").focus();
 	o(songName + ' - path - ' + songPath + '?? ' + playerSrc);
 	// <source id="mySource" src="music/01 - Super Colossal.mp3" type="audio/mpeg" />
 
@@ -119,7 +127,7 @@ function ini(){
 
 	
 function showList(){
-	//currSong = document.getElementByClassName('currentSong');
+	// currSong = document.getElementByClassName('currentSong');
 	
 
 	var btn = document.getElementById("showList");
@@ -155,11 +163,41 @@ function showControls(){
 }
 
 function previous(){
-	alert("previous");
+	currSongIndex--;
+
+	if(currSongIndex <= 0)
+		currSongIndex = 0;
+
+
+
+	var nextS = jsListSong[currSongIndex];
+	curSong = $('.currentSong');
+	curSongText = $('.currentSong').text();
+
+	curSong.removeClass('currentSong');
+	nextS.classList.add('currentSong');
+
+	setSong(nextS);
 }
 
 function next(){
-	alert("next");
+	o(totalSongs);
+	currSongIndex++;
+
+	if(currSongIndex >= totalSongs)
+		currSongIndex = totalSongs - 1;
+
+
+
+	var nextS = jsListSong[currSongIndex];
+	curSong = $('.currentSong');
+	curSongText = $('.currentSong').text();
+
+	curSong.removeClass('currentSong');
+	nextS.classList.add('currentSong');
+
+	setSong(nextS);
+	o(currSongIndex);
 }
 
 function play(){
@@ -287,6 +325,6 @@ function changeStart(){
 	// 	aumento += aumento;
 	// }
 	valorRange.style.width = aumento  + "%";
-	o("progressBar valorRange = " + aumento);
+	// o("progressBar valorRange = " + aumento);
 	//alert(aumento)
 }
