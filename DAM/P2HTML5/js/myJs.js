@@ -1,13 +1,17 @@
+var DEBUG_MODE_ON = 1;
+//----------------------
 var text;
 var curSong;
 var curSongText;
 var listSongs;
 var lastValue;
 var valor;
-var volumeV;
+var total;
+var currTime;
 var jsListSong = {};
+//**************************************************
 var playerSrc = document.getElementById("mySource");
-
+var volumeV = document.getElementById("volumeValue");
 
 //-------- START JQUERY --------------------------------------------------------------------
 var barVolumen = $("#slider").data("rangeinput");
@@ -60,7 +64,7 @@ function dump_listSong(){
 	// document.getElementById("#test").innerHTML();
 }
 
-function o(valor){ console.log(valor); }
+function o(valor){ (DEBUG_MODE_ON) ? console.log(valor) : false; }
 function getSongPathbyObject(obj){ return obj.getAttribute("path"); }
 function getSongNamebyObject(obj){ return obj.textContent; }
 
@@ -70,7 +74,7 @@ function setSong(songObj){
 	// var playerSrc = '<source id="mySource" src="'+ songPath +'" type="audio/mpeg" />';
 	
 	playerSrc.setAttribute("src", songPath);
-	
+	player.load();
 	play();
 	o(songName + ' - path - ' + songPath + '?? ' + playerSrc);
 	// <source id="mySource" src="music/01 - Super Colossal.mp3" type="audio/mpeg" />
@@ -88,9 +92,7 @@ function ini(){
 	var player = document.getElementById('player');
 	volumen();
 	//cambio de tiempo en el player
-	player.ontimeupdate = function(){
-		// o("tiempo cambioando");
-	}
+	player.ontimeupdate = function(){ showTime(); }
 
 	//colores toogle
 	var btn = document.getElementById("showList");
@@ -110,7 +112,8 @@ function ini(){
 	document.getElementById("barVolumen").style.cursor = 'pointer';
 	document.getElementById("progressField").style.cursor = 'pointer';
 
-	
+	var aaa = secondToMinutes(10);
+	o(aaa);
 }
 
 
@@ -160,9 +163,9 @@ function next(){
 }
 
 function play(){
-	player.load();
+	
 	player.play();
-	//showTime()
+	showTime();
 }
 
 function pause(){
@@ -177,22 +180,40 @@ function stop(){
 
 function secondToMinutes(valor){
 	var min, seg, aux;
+	var strTime;
+
 	aux = valor;
 	min = valor / 60;
 	min = Math.round(min);
 	seg = valor % 60;
 	seg = Math.round(seg);
+// (DEBUG_MODE_ON) ? console.log(valor) : false;
 
-	return min + ":" + seg;
+	if(min <= 9)
+		strTime = "0" + min;
+	else
+		strTime = min;
+
+	if(seg <= 9)
+		strTime = strTime + ":" + "0" + seg;
+	else
+		strTime = strTime + ":" + seg;
+	
+	//strTime = (min <= 9) "0" + min : min;
+	//strTime = strTime + ":" (seg < 9) "0" + seg : seg;
+	return  strTime;
 }
 
 
 
 function showTime(){
 	var labelTime = document.getElementById('playerTime');
-	var total = player.duration;
-	var currTime = player.currentTime;
+	total = player.duration;
+	currTime = player.currentTime;
+	// o(currTime+"/"+total);
 	labelTime.innerHTML = secondToMinutes(currTime) + "/" +  secondToMinutes(total);
+
+	changeStart();
 }
 
 
@@ -200,7 +221,6 @@ function volumen(){
 	
 	valor = document.getElementById('barVolumen').value;
 	var btn = document.getElementById("btnMute");
-	volumeV = document.getElementById("volumeValue");
 
 	if(valor == 99)
 		valor = valor + 1;
@@ -224,11 +244,9 @@ function mute(){
 	var bVolum = document.getElementById("barVolumen");
 	var curValue = bVolum.getAttribute("value");
 
+
 	if(curValue != 0)
 			lastValue =  valor;
-			// lastValue = bVolum.getAttribute("value");
-
-	o("RAW->" + valor);
 
 	if(btn.className == 'mdi-av-volume-up small valign'){
 		btn.className = "mdi-av-volume-off small valign";
@@ -237,30 +255,38 @@ function mute(){
 		
 
 		bVolum.setAttribute("value", 0);
+		volumeV.innerHTML = 0;
 		player.muted = true;
 	}
 	else{
 		btn.className = "mdi-av-volume-up small valign";
 		bVolum.setAttribute("value", lastValue);
+		volumeV.innerHTML = lastValue;
 		o("Si");
 		o(lastValue);
 		player.muted = false;
 	}
-	// volumen();
-	//TODO: no cambia la barra cuando cambias el volumen
-	barVolumen.setValue(parseInt(valor));
+
+	bVolum.setAttribute("value", parseInt(valor));
 }
 
 
 function changeStart(){
-	//alert("cambiando posición");
+
+	total = player.duration;
+	currTime = player.currentTime;
+
 	var ancho = document.getElementById("progressField").offsetWidth;
+	var valorRange = document.getElementById("progressBar");
+	var aumento;
 	var paso = ancho/100;
-	var aumento = paso;
+	aumento =  (currTime / total) * 100 ;
 	//alert(aumento);
-	while(aumento < ancho){
-		document.getElementById("progressBar").style.width = aumento + "%";
-		aumento += aumento;
-	}
+	// while(aumento < ancho){
+	// 	document.getElementById("progressBar").style.width = aumento + "%";
+	// 	aumento += aumento;
+	// }
+	valorRange.style.width = aumento  + "%";
+	o("progressBar valorRange = " + aumento);
 	//alert(aumento)
 }
