@@ -15,3 +15,7 @@ function resizeIframe(obj){
 }
 
 function o(valor){ (DEBUG_MODE_ON) ? console.log(valor) : false; }
+
+function CanvasDrawRectangle(){
+	
+}
