@@ -82,80 +82,7 @@
             </div>
           </div>
 
-          <div class="row info-player">
-              <div class="col s12 card player">
-              <div class="row no-margin-bottom">
-                <div class="col s4">
-                 
-                    <audio id="player">
-                      <source id="mySource" src="music/01 - Super Colossal.mp3" type="audio/mpeg" />
-                    </audio>
-                    <i class="mdi-av-my-library-music large valign"></i>
-                  
-                </div>
-                <div class="col s8">
-                    <div class="row data-info">
-                      <div class="col s12">
-                        <h6 id="titleDisplay" ></h6>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col s8">
-                        <div class="progress" id="progressField" onclick="changeStart()">
-                            <div id="progressBar"  class="determinate" style="width: 0%"></div>
-                        </div>
-                      </div>
-                      <div  class="col s4 ">
-                          <div id="playerTime" class="playerTime center-align">00:00/00:00</div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="row no-margin-bottom">
-                      <div class="col s4 offset-s1 minControls">
-                        <i id="showList" onclick="showList()" class="mdi-action-list sTiny"></i>
-                        <i id="showControls"  onclick="showControls()"  class="mdi-hardware-keyboard-control sTiny "></i>
-                        
-                      </div>
-                </div>
-              </div>
-              </div>
-              
-          </div>
-          <div id="playList" class="row player no-margin-bottom">
-            <ul class="collection">
-              <li class="collection-item currentSong" path="music/01 - Super Colossal.mp3">01 - Super Colossal</li>
-              <li class="collection-item" path="music/02 - Just Like Lightnin'.mp3">02 - Just Like Lightnin'</li>
-              <li class="collection-item" path="music/13 - Crowd Chant.mp3">13 - Crowd Chant</li>
-              <li class="collection-item" path="music/02 - Dream Song.mp3">02 - Dream Song</li>
-              <li class="collection-item" path="music/09 - Wormhole Wizards.mp3">09 - Wormhole Wizards</li>
-              <li class="collection-item" path="music/11 - God is Crying.mp3">11 - God is Crying</li>
-            </ul>
-            <div class="divider"></div>
-          </div>
-           <div id="navigation" class="row navigation">
-
-              <div id="navigationControls" class="col s6 navigation-player center-align">
-                  <div class="valign-wrapper">
-                   <i id="btnPrevious" onclick="previous()" class="mdi-av-skip-previous small valign"></i>
-                   <i id="btnPlay" onclick="play()" class="mdi-av-play-arrow small valign"></i>
-                   <i id="btnPause" onclick="pause()" class="mdi-av-pause small valign"></i>
-                   <i id="btnStop" onclick="stop()" class="mdi-av-stop small valign"></i>
-                   <i id="btnNext" onclick="next()" class="mdi-av-skip-next small valign"></i>
-                 </div>
-              </div>
-              <div class="col s2 navigation-player center-align">
-                 <div class="valign-wrapper">
-                  <i id="btnMute" onclick="mute()" class="mdi-av-volume-up small valign"></i>
-                  <span id="volumeValue" class="volumenValue valign">100</span>
-                  </div>
-              </div>
-              <div class="col s4 range-field navigation-player">
-                  <div class="valign-wrapper">
-                    <input class="browser-default valign" id="barVolumen" onchange="volumen()" type="range" min="0" max="100" value="100" />
-                  </div>
-              </div>
-          </div>
+          <iframe id="iAudioPlayer" src="audioPlayer/player.html"></iframe>
           
         </div>
 
@@ -165,8 +92,18 @@
 
   	   <article id="apartado3" class="content">
         <h2>Apartado 3</h2>
-        <h3>Video</h3>
-        <p></p>
+        <div class="container">
+
+
+          <div class="row">
+            <div class="col s12 ">
+              <h2 class="center-align">Apartado 2 </h2>
+            </div>
+          </div>
+
+          <iframe id="iVideoPlayer" src="audioPlayer/player.html"></iframe>
+          
+        </div>
     	</article><!--content end-->
       <article id="apartado4" class="content">
         <h2>Apartado 4 </h2>
