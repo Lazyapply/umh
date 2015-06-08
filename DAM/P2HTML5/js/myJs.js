@@ -1,330 +1,93 @@
 var DEBUG_MODE_ON = 1;
-//----------------------
-var text;
-var curSong;
-var curSongText;
-var listSongs;
-var lastValue;
-var valor;
-var total;
-var totalSongs
-var currTime;
-var jsListSong = {};
-//**************************************************
-var titleDisplay = document.getElementById("titleDisplay");
-var currSongIndex = 0;
-var elemento;
-var playerSrc = document.getElementById("mySource");
-var volumeV = document.getElementById("volumeValue");
+var iFrAudioPlayer 	= iFrAudioPlayer 	= document.getElementById("iAudioPlayer");
+var iFrVideoPlayer 	= document.getElementById('iVideoPlayer');
+var canvas 			= document.getElementById('myCanvas');
+// var aux 			= setInterval(function(){ini()},200);
 
-//-------- START JQUERY --------------------------------------------------------------------
-var barVolumen = $("#slider").data("rangeinput");
-
-
-$(document).ready(function(){
-
+function ini(){
 	
+	 resizeIframe(iFrAudioPlayer);
+	 drawCanvas(canvas);
+	 // resizeIframe(iFrVideoPlayer);
+	 // o("cambio");
+}
 
-	//captura de lista de canciones
-	listSongs = $( ".collection" ).find( "li" );
-	//pasamos de objetos Jquery a array javascript
-	jsListSong = $.makeArray( listSongs );
-	//cambio dinamico de valor
-	$("#barVolumen").mousemove( function(e){	volumen();	});
-	
-	//capturar canción pulsada
-	$('.collection').dblclick(function(event) {
-		elemento = $(event.target);
-    	var songName = elemento.text();
-    	curSong = $('.currentSong');
-    	curSongText = $('.currentSong').text();
-
-    	curSong.removeClass('currentSong');
-    	elemento.addClass('currentSong');
-    	// o(listSongs);
-    	currSongIndex = listSongs.index(elemento);
-    	setSong(jsListSong[currSongIndex]);
-    	
-	});
-
-	o("Documento cargado");
-	// o(listSongs.index(curSong));
-});
-
-//-------- END JQUERY --------------------------------------------------------------------
-
-function dump_listSong(){
-	totalSongs = jsListSong.length;
-
-	for(c=0;c<totalSongs;c++)
-		o("["+ c +"] -> " + getSongNamebyObject(jsListSong[c]));
-
-	o("_______________________");
-	o("Canciones cargadas: " + totalSongs);
-	
-
-	//setSong(jsListSong[1]);
-	//test
-	//var songPath = getSongPathbyObject(jsListSong[0]);
-	//o(songPath);
-	// document.getElementById("#test").innerHTML();
+function resizeIframe(obj){
+	obj.style.height = (obj.contentWindow.document.body.scrollHeight) + 'px';
 }
 
 function o(valor){ (DEBUG_MODE_ON) ? console.log(valor) : false; }
-function getSongPathbyObject(obj){ return obj.getAttribute("path"); }
-function getSongNamebyObject(obj){ return obj.textContent; }
 
-function setSong(songObj){
-	var songName = getSongNamebyObject(songObj);
-	var songPath = getSongPathbyObject(songObj);
-	// var playerSrc = '<source id="mySource" src="'+ songPath +'" type="audio/mpeg" />';
-	
-	playerSrc.setAttribute("src", songPath);
-	player.load();
-	play();
-	titleDisplay.innerHTML = songName;
-	$(".currentSong").focus();
-	o(songName + ' - path - ' + songPath + '?? ' + playerSrc);
-	// <source id="mySource" src="music/01 - Super Colossal.mp3" type="audio/mpeg" />
+function CanvasDrawRectangle(objcanvas, x, y, height, width, shadow){
+	var ctx = objcanvas.getContext("2d");
 
-
-}
-
-function ini(){
-
-	dump_listSong();
-
-	//cerramos la lista de reproducción
-	document.getElementById("playList").style.display = "none";
-
-	var player = document.getElementById('player');
-	volumen();
-	//cambio de tiempo en el player
-	player.ontimeupdate = function(){ showTime(); }
-
-	//colores toogle
-	var btn = document.getElementById("showList");
-	var btn2 = document.getElementById("showControls");
-	btn.style.color = 'black';
-	btn2.style.color = 'white';
-
-	//punteros
-	document.getElementById("showList").style.cursor = 'pointer';
-	document.getElementById("showControls").style.cursor = 'pointer';
-	document.getElementById("btnPrevious").style.cursor = 'pointer';
-	document.getElementById("btnPlay").style.cursor = 'pointer';
-	document.getElementById("btnPause").style.cursor = 'pointer';
-	document.getElementById("btnStop").style.cursor = 'pointer';
-	document.getElementById("btnNext").style.cursor = 'pointer';
-	document.getElementById("btnMute").style.cursor = 'pointer';
-	document.getElementById("barVolumen").style.cursor = 'pointer';
-	document.getElementById("progressField").style.cursor = 'pointer';
-
-	var aaa = secondToMinutes(10);
-	o(aaa);
-}
-
-
-	
-function showList(){
-	// currSong = document.getElementByClassName('currentSong');
-	
-
-	var btn = document.getElementById("showList");
-	var list = document.getElementById("playList");
-
-
-	if(btn.style.color == 'black'){
-		btn.style.color = 'white';
-		list.style.display = "block";
+	if(shadow == 1){
+		ctx.shadowOffsetX = 5;
+		ctx.shadowOffsetY = 5;
+		ctx.shadowBlur = 10;
+		ctx.shadowColor = "Brown";
+		ctx.fillStyle = "Gold";
+		ctx.fillRect(x, y, width, height);
 	}
 	else{
-		btn.style.color = 'black';
-		list.style.display = "none";
-		
+		ctx.rect(x, y, width, height);
+		ctx.strokeStyle = '#ff00ff';
+		ctx.stroke();
 	}
+	o(shadow);
 }
 
-function showControls(){
-
-	var btn = document.getElementById("showControls");
-	var controls = document.getElementById("navigation");
 
 
-	if(btn.style.color == 'black'){
-		btn.style.color = 'white';
-		controls.style.display = "block";
-	}
-	else{
-		btn.style.color = 'black';
-		controls.style.display = "none";
-		
-	}
+
+function CanvasDrawArc(objCanvas, cx, cy, r, sa, ea){
+	var ctx = objCanvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(cx, cy, r, sa, ea);
+	ctx.strokeStyle = '#000';
+	ctx.stroke();
 }
 
-function previous(){
-	currSongIndex--;
+function CanvasDrawLinearGradient(objCanvas, x1, y1, x2, y2, color1, color2){
+	var ctx = objCanvas.getContext("2d");
+	var grd = ctx.createLinearGradient(0,0,170,0);
 
-	if(currSongIndex <= 0)
-		currSongIndex = 0;
+	grd.addColorStop(0,color1);
+	grd.addColorStop(1,color2);
 
-
-
-	var nextS = jsListSong[currSongIndex];
-	curSong = $('.currentSong');
-	curSongText = $('.currentSong').text();
-
-	curSong.removeClass('currentSong');
-	nextS.classList.add('currentSong');
-
-	setSong(nextS);
+	ctx.fillStyle = grd;
+	ctx.fillRect(x1,y1,x2,y2);
 }
 
-function next(){
-	o(totalSongs);
-	currSongIndex++;
-
-	if(currSongIndex >= totalSongs)
-		currSongIndex = totalSongs - 1;
-
-
-
-	var nextS = jsListSong[currSongIndex];
-	curSong = $('.currentSong');
-	curSongText = $('.currentSong').text();
-
-	curSong.removeClass('currentSong');
-	nextS.classList.add('currentSong');
-
-	setSong(nextS);
-	o(currSongIndex);
+function CanvasDrawLine(objcanvas, sx, sy, ex, ey){
+	var ctx = objcanvas.getContext("2d");
+	ctx.moveTo(sx,sy);
+	ctx.lineTo(ex,ey);
+	ctx.strokeStyle = '#ffaf00';
+	ctx.stroke();
 }
 
-function play(){
-	
-	player.play();
-	showTime();
-}
 
-function pause(){
-	player.pause();
-}
+function CanvasDrawText(objcanvas, x, y, text, font){
 
-function stop(){
-	player.pause();
-	player.currentTime = 0;
+	var ctx = objcanvas.getContext("2d");
 
-}
-
-function secondToMinutes(valor){
-	var min, seg, aux;
-	var strTime;
-
-	aux = valor;
-	min = valor / 60;
-	min = Math.round(min);
-	seg = valor % 60;
-	seg = Math.round(seg);
-// (DEBUG_MODE_ON) ? console.log(valor) : false;
-
-	if(min <= 9)
-		strTime = "0" + min;
+	if(font != undefined)
+		ctx.font = font;
 	else
-		strTime = min;
+		ctx.font = "20px Georgia"
 
-	if(seg <= 9)
-		strTime = strTime + ":" + "0" + seg;
-	else
-		strTime = strTime + ":" + seg;
-	
-	//strTime = (min <= 9) "0" + min : min;
-	//strTime = strTime + ":" (seg < 9) "0" + seg : seg;
-	return  strTime;
+	ctx.fillStyle = '#000';
+	ctx.fillText(text,x,y);
+
 }
 
-
-
-function showTime(){
-	var labelTime = document.getElementById('playerTime');
-	total = player.duration;
-	currTime = player.currentTime;
-	// o(currTime+"/"+total);
-	labelTime.innerHTML = secondToMinutes(currTime) + "/" +  secondToMinutes(total);
-
-	changeStart();
-}
-
-
-function volumen(){
-	
-	valor = document.getElementById('barVolumen').value;
-	var btn = document.getElementById("btnMute");
-
-	if(valor == 99)
-		valor = valor + 1;
-
-	if(valor == 0)
-		btn.className = "mdi-av-volume-off small valign";
-	else
-		btn.className = "mdi-av-volume-up small valign";
-
-	volumeV.innerHTML = valor;
-	o(valor);
-	player.volume = valor/100;
-
-	
-	
-}
-
-function mute(){
-	
-	var btn = document.getElementById("btnMute");
-	var bVolum = document.getElementById("barVolumen");
-	var curValue = bVolum.getAttribute("value");
-
-
-	if(curValue != 0)
-			lastValue =  valor;
-
-	if(btn.className == 'mdi-av-volume-up small valign'){
-		btn.className = "mdi-av-volume-off small valign";
-		o("no");
-		o(0);
-		
-
-		bVolum.setAttribute("value", 0);
-		volumeV.innerHTML = 0;
-		player.muted = true;
-	}
-	else{
-		btn.className = "mdi-av-volume-up small valign";
-		bVolum.setAttribute("value", lastValue);
-		volumeV.innerHTML = lastValue;
-		o("Si");
-		o(lastValue);
-		player.muted = false;
-	}
-
-	bVolum.setAttribute("value", parseInt(valor));
-}
-
-
-function changeStart(){
-
-	total = player.duration;
-	currTime = player.currentTime;
-
-	var ancho = document.getElementById("progressField").offsetWidth;
-	var valorRange = document.getElementById("progressBar");
-	var aumento;
-	var paso = ancho/100;
-	aumento =  (currTime / total) * 100 ;
-	//alert(aumento);
-	// while(aumento < ancho){
-	// 	document.getElementById("progressBar").style.width = aumento + "%";
-	// 	aumento += aumento;
-	// }
-	valorRange.style.width = aumento  + "%";
-	// o("progressBar valorRange = " + aumento);
-	//alert(aumento)
+function drawCanvas(objcanvas){
+	CanvasDrawRectangle(objcanvas, 5, 5, 50, 80, 0);
+	CanvasDrawLine(objcanvas, 0, 60, 100, 60);
+	CanvasDrawArc(objcanvas,100,75,50,2,3);
+	CanvasDrawLinearGradient(objcanvas, 120, 20, 150, 50, '#ff00ff', '#5f5f5f');
+	CanvasDrawRectangle(objcanvas, 100, 75, 50, 80, 1);
+	CanvasDrawText(objcanvas, 10, 100, 'texto de prueba');
+	//20,20,150,100
 }

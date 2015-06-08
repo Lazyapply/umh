@@ -81,82 +81,9 @@
               <h2 class="center-align">Apartado 2 </h2>
             </div>
           </div>
-
-          <div class="row info-player">
-              <div class="col s12 card player">
-              <div class="row no-margin-bottom">
-                <div class="col s4">
-                 
-                    <audio id="player">
-                      <source id="mySource" src="music/01 - Super Colossal.mp3" type="audio/mpeg" />
-                    </audio>
-                    <i class="mdi-av-my-library-music large valign"></i>
-                  
-                </div>
-                <div class="col s8">
-                    <div class="row data-info">
-                      <div class="col s12">
-                        <h6 id="titleDisplay" >Master of puppets</h6>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col s8">
-                        <div class="progress" id="progressField" onclick="changeStart()">
-                            <div id="progressBar"  class="determinate" style="width: 0%"></div>
-                        </div>
-                      </div>
-                      <div  class="col s4 ">
-                          <div id="playerTime" class="playerTime center-align">00:25/3:35</div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="row no-margin-bottom">
-                      <div class="col s4 offset-s1 minControls">
-                        <i id="showList" onclick="showList()" class="mdi-action-list sTiny"></i>
-                        <i id="showControls"  onclick="showControls()"  class="mdi-hardware-keyboard-control sTiny "></i>
-                        
-                      </div>
-                </div>
-              </div>
-              </div>
-              
+          <div class="row">
+            <iframe class="col s12"  frameborder="0" id="iAudioPlayer" src="audioPlayer/player.html"></iframe>
           </div>
-          <div id="playList" class="row player no-margin-bottom">
-            <ul class="collection">
-              <li class="collection-item currentSong" path="music/01 - Super Colossal.mp3">01 - Super Colossal</li>
-              <li class="collection-item" path="music/02 - Just Like Lightnin'.mp3">02 - Just Like Lightnin'</li>
-              <li class="collection-item" path="music/13 - Crowd Chant.mp3">13 - Crowd Chant</li>
-              <li class="collection-item" path="music/02 - Dream Song.mp3">02 - Dream Song</li>
-              <li class="collection-item" path="music/09 - Wormhole Wizards.mp3">09 - Wormhole Wizards</li>
-              <li class="collection-item" path="music/11 - God is Crying.mp3">11 - God is Crying</li>
-            </ul>
-            <div class="divider"></div>
-          </div>
-           <div id="navigation" class="row navigation">
-
-              <div id="navigationControls" class="col s6 navigation-player center-align">
-                  <div class="valign-wrapper">
-                   <i id="btnPrevious" onclick="previous()" class="mdi-av-skip-previous small valign"></i>
-                   <i id="btnPlay" onclick="play()" class="mdi-av-play-arrow small valign"></i>
-                   <i id="btnPause" onclick="pause()" class="mdi-av-pause small valign"></i>
-                   <i id="btnStop" onclick="stop()" class="mdi-av-stop small valign"></i>
-                   <i id="btnNext" onclick="next()" class="mdi-av-skip-next small valign"></i>
-                 </div>
-              </div>
-              <div class="col s2 navigation-player center-align">
-                 <div class="valign-wrapper">
-                  <i id="btnMute" onclick="mute()" class="mdi-av-volume-up small valign"></i>
-                  <span id="volumeValue" class="volumenValue valign">100</span>
-                  </div>
-              </div>
-              <div class="col s4 range-field navigation-player">
-                  <div class="valign-wrapper">
-                    <input class="browser-default valign" id="barVolumen" onchange="volumen()" type="range" min="0" max="100" value="100" />
-                  </div>
-              </div>
-          </div>
-          
         </div>
 
 
@@ -164,19 +91,65 @@
 
 
   	   <article id="apartado3" class="content">
-        <h2>Apartado 3</h2>
-        <h3>Video</h3>
-        <p></p>
+        <div class="container">
+          <div class="row">
+            <div class="col s12 ">
+              <h2 class="center-align">Apartado 3 </h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- <iframe class="col s12"  frameborder="0" id="iAudioPlayer" src="audioPlayer/player.html"></iframe> -->
+          </div>
+        </div>
     	</article><!--content end-->
       <article id="apartado4" class="content">
-        <h2>Apartado 4 </h2>
-    	 	<h3>Canvas</h3>
-        <p></p>
+          <div class="container">
+          <div class="row">
+            <div class="col s12 ">
+              <h2 class="center-align">Apartado 4 </h2>
+            </div>
+          </div>
+          <div class="row">
+            <canvas class="col s12" id="myCanvas" style="border:1px solid #000000;">
+            </canvas>
+          </div>
+        </div>
       </article><!--content end-->
   	<article id="apartado5" class="content">
-        <h2>Apartado 5 </h2>
-    	 	<h3>SVG</h3>
-        <p></p>
+         <div class="container">
+          <div class="row">
+            <div class="col s12 ">
+              <h2 class="center-align">Apartado 5 </h2>
+            </div>
+          </div>
+          <div class="row">
+          <svg class="col s12" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+    <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect x="10" y="250" width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)" />
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <rect x="100" y="50" width="280" height="50" style="fill:url(#grad1);stroke-width:1;stroke:rgb(0,0,0)" />
+ 
+           <path d="M10 80 Q 95 10 180 80" stroke="black" fill="transparent"/>
+            <line x1="0" y1="90" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+            <rect width="80" height="50" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
+   <text x="0" y="15" fill="red">I love SVG!</text>
+            Tu navegador no soporta SVG
+          </svg>
+         
+            
+          </div>
+        </div>
       </article><!--content end-->
       
     </section><!--section end-->
