@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      
+      <?php 
+
+        function genOrder(){
+          $order;
+          $s = "abcdefgh";
+          $order = rand(0, 9999);
+          $order .= str_shuffle($s);
+
+          return $order;
+        }
+
+      ?>
+
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/pasarela.css" />
+      <title>Pasarela de pago</title>
+    </head>
+
+    <body>
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">Paypal</a></li>
+              <li><a href="redsys.html">RedSys</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+      <div class="container">
+       <div class="row"></div>
+        <div class="row">
+          <div class="col s12 card center">
+            <h2>RedSys</h2>
+            <div class="row">
+              <div class="col s6">
+                <form action="finCompra.html" method="post" accept-charset="utf-8">
+                  <input name="Ds_Merchant_Amount" type="hidden" value="<?php echo $_POST["total"]; ?>">
+                  <input name="Ds_Merchant_Currency" type="hidden" value="978">
+                  <input name="Ds_Merchant_Order" type="hidden" value="<?php echo genOrder(); ?>">
+                  <input name="Ds_Merchant_ProductDescription" type="hidden" value="">
+                  <input name="DS_Merchant_MerchantCode" type="hidden" value="012809">
+                  <input name="DS_Merchant_MerchantName." type="hidden" value="LazyShop">
+                  <input name="DS_Merchant_Terminal" type="hidden" value="N/D">
+                  <input name="DS_Merchant_TransactionType" type="hidden" value="0">
+                  <input name="DS_Merchant_urlOK" type="hidden" value="http://localhost/umh/CE/gracias.html">
+                  <input name="DS_Merchant_urlKO" type="hidden" value="http://localhost/umh/CE/error.html">
+                  <input name="DS_Merchant_Signature" type="hidden" value="">
+
+                  <div class="input-field col s12">
+                    <input id="DS_Merchant_Titular" name="DS_Merchant_Titular" type="text" class="validate">
+                    <label for="DS_Merchant_Titular">Nombre</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input id="apellidos" type="text" class="validate">
+                    <label for="apellidos">Apellidos</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input type="submit" value="Finalizar compra" class="btn right">
+                  </div>
+                </form>
+            
+              </div>
+              <div class="col s6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main>
+       <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <a class="btn right" href="index.html"><i class="mdi-content-backspace left"></i>Atrás</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/pasarela.js"></script>
+    </body>
+  </html>

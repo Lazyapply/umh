@@ -16,7 +16,7 @@
           <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right">
-                 <li><a href="index.html">Paypal</a></li>
+              <li><a href="index.html">Paypal</a></li>
               <li><a href="redsys.html">RedSys</a></li>
             </ul>
           </div>
@@ -95,17 +95,11 @@
          	
           	</div>
     
-          	<form class="col s7 valign formPay" id="carrito_form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_cart">
-				<input type="hidden" name="upload" value="1">
-				<input type="hidden" name="business" value="serystar-facilitator@serystar.dvel.es">
-
-   
-              	<input type="hidden" name="currency_code" value="EUR">
-				<input type="hidden" name="return" value="http://localhost/umh/CE/gracias.html">
-				<input type="hidden" name="cancel_return" value="http://localhost/umh/CE/error.html">
+        <form class="col s7 valign formPay" id="carrito_form" action="toRedSys.html" method="post">
+				<input id="inputTotal" type="hidden" name="total" value="">
+			
 		
-				<input class="btn right" type="submit"  value="Pagar con Paypal">
+				<input class="btn right" type="submit"  value="Pagar con RedSys">
 	             
 				</form>
 				<div class="col s5 valign right formPay" id="totalPrice"></div>
@@ -125,6 +119,6 @@
     </footer>
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script type="text/javascript" src="js/pasarela.js"></script>
+      <script type="text/javascript" src="js/pasarela2.js"></script>
     </body>
   </html>

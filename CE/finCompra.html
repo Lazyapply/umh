@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      
+      
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/pasarela.css" />
+      <title>Pasarela de pago</title>
+    </head>
+
+    <body>
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href="index.html">Paypal</a></li>
+              <li><a href="redsys.html">RedSys</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+      <div class="container">
+       <div class="row"></div>
+        <div class="row">
+          <div class="col s12 card center">
+            <h2>Finalización compra</h2>
+            <table class="hoverable">
+              <tbody>
+                
+            <?php 
+
+                function genKey(){
+                  $auxKey = '';
+                  $key = '';
+                  $secret = "UMH2809";
+
+                  $auxKey .= $_POST["Ds_Merchant_Amount"];
+                  $auxKey .= $_POST["Ds_Merchant_Order"];
+                  $auxKey .= $_POST["DS_Merchant_MerchantCode"];
+                  $auxKey .= $_POST["Ds_Merchant_Currency"];
+                  $auxKey .= $_POST["DS_Merchant_TransactionType"];
+                  $auxKey .= $secret;
+
+
+                  return sha1($auxKey);
+
+                }
+
+
+
+                foreach ($_POST as $key => $value) {
+                  echo "<tr><td>";
+
+                  if($key != "DS_Merchant_Signature")
+                    echo $key."<td>".$value."</td>";
+                  else
+                    echo $key."<td>".genKey()."</td>";
+            
+
+                  echo "</td></tr>";
+                }
+            ?>
+             
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <main>
+      
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/pasarela.js"></script>
+    </body>
+  </html>
