@@ -86,21 +86,33 @@
           </div>
           <div class="col s6 card">
           <!-- mdi-action-add-shopping-cart -->
-          <h4><i class="mdi-action-shopping-cart left"></i>Carrito</h4>
-            <ul id="carrito" class="collection">
-              <!--<li class="collection-item">Alvin</li>
-              <li class="collection-item">Alvin</li>
-              <li class="collection-item">Alvin</li>
-              <li class="collection-item">Alvin</li>-->
-              <div id="total"></div>
-            </ul>
+      		<h4><i class="mdi-action-shopping-cart left"></i>Carrito</h4>
+            <div id="carrito" class="collecion-item">
+            </div>
+            <br>
+            <div class="valign-wrapper">
+            
+         	
+          	</div>
+    
+          	<form class="col s7 valign formPay" id="carrito_form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_cart">
+				<input type="hidden" name="upload" value="1">
+				<input type="hidden" name="business" value="serystar-facilitator@serystar.dvel.es">
 
-          </div>
+   
+              	<input type="hidden" name="currency_code" value="EUR">
+				
+		
+				<input class="btn right" type="submit"  value="Pagar con Paypal">
+	             
+				</form>
+				<div class="col s5 valign right formPay" id="totalPrice"></div>
+	        </div>
         </div>
-        
-      </div>
+
       
-      <main>
+      </main>
        <footer class="page-footer">
         <div class="container">
             <div class="row">

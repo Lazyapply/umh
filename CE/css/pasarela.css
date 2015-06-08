@@ -13,4 +13,12 @@ main {
 	width: 100%;
 	bottom:0;
 }
+
+.collection-item{
+	cursor: pointer;
+}
+
+.formPay{
+	margin-top: 25px;
+}
       
