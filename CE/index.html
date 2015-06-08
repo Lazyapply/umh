@@ -2,28 +2,116 @@
   <html>
     <head>
       
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/pasarela.css" />
       <title>Pasarela de pago</title>
     </head>
 
     <body>
-      
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right">
+              <li><a href="#">Paypal</a></li>
+              <li><a href="#">RedSys</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
       <div class="container">
         <div class="row">
-          <div class="col s12">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <div class="col s6 card">
+          <h4>Productos disponibles<i class="mdi-action-info blue-text right tooltipped" data-position="left" data-tooltip="Doble Click para añadir el producto"></i></h4>
+          
+          
+            <ul class="collection">
+              <li class="collection-item" ondblclick="addProduct(1)">
+                <div class="row valign-wrapper">
+                    <div class="col s2 valign">
+                        <img class="responsive-img" src="img/nikon.jpg" alt="nikon">
+                    </div>
+                    <div class="col s8 valign">
+                    Nikon D5300 24MP
+                    </div>
+                    <div class="col s2 valign">
+                    639.00€
+                    </div>
+                </div>
+              </li>
+              <li class="collection-item" ondblclick="addProduct(2)">
+                 <div class="row valign-wrapper">
+                    <div class="col s2 valign">
+                        <img class="responsive-img" src="img/disco.jpg" alt="hhd">
+                    </div>
+                    <div class="col s8 valign">
+                    Verbatin Portable HHD
+                    </div>
+                    <div class="col s2 valign">
+                    79.95€
+                    </div>
+                </div>
+              </li>
+              <li class="collection-item" ondblclick="addProduct(3)">
+                 <div class="row valign-wrapper">
+                    <div class="col s2 valign">
+                        <img class="responsive-img" src="img/xperia.jpg"  alt="xperia">
+                    </div>
+                    <div class="col s8 valign">
+                    Sony Xperia M4
+                    </div>
+                    <div class="col s2 valign">
+                    228.00€
+                    </div>
+                </div>
+              </li>
+              <li class="collection-item" ondblclick="addProduct(4)">
+                 <div class="row valign-wrapper">
+                    <div class="col s2 valign">
+                        <img class="responsive-img" src="img/gtx.jpg"  alt="gtx">
+                    </div>
+                    <div class="col s8 valign">
+                    MSI GeForce Gtx 960
+                    </div>
+                    <div class="col s2 valign">
+                    270.00€
+                    </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col s6 card">
+          <!-- mdi-action-add-shopping-cart -->
+          <h4><i class="mdi-action-shopping-cart left"></i>Carrito</h4>
+            <ul id="carrito" class="collection">
+              <!--<li class="collection-item">Alvin</li>
+              <li class="collection-item">Alvin</li>
+              <li class="collection-item">Alvin</li>
+              <li class="collection-item">Alvin</li>-->
+              <div id="total"></div>
+            </ul>
+
           </div>
         </div>
+        
       </div>
-
+      
+      <main>
+       <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <a class="btn right" href="index.html"><i class="mdi-content-backspace left"></i>Atrás</a>
+                </div>
+            </div>
+        </div>
+    </footer>
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/pasarela.js"></script>
     </body>
   </html>
