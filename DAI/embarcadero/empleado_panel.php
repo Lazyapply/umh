@@ -29,7 +29,7 @@
             <div class="col s12 warning">
 
               <?php 
-                require_once 'components/empleado_options.html';
+                require_once 'components/list_employees.php';
               ?>
 
             </div>

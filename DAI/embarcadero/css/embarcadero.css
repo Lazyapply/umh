@@ -11,3 +11,9 @@ main {
 .myAside{
 	max-height: 1px !important;
 }
+
+#profile-pic{
+	height: 4px !important;
+
+}
+
