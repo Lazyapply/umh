@@ -33,13 +33,16 @@
 		<?php echo $myEmbarcaciones->listTableData(EMPLOYEES); ?>
 	</tbody>
 </table>
+
+
+
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red">
       <i class="large mdi-editor-mode-edit"></i>
     </a>
     <ul>
-		<li id="btnAdd" class="tooltipped" data-position="left" data-delay="5" data-tooltip="Añadir"><a onclick="employeeAdd()" class="btn-floating green"><i class="large mdi-social-group-add"></i></a></li>
-		<li id="btnEdit" class="tooltipped" data-position="left" data-delay="5" data-tooltip="Editar"><a class="btn-floating yellow darken-1"><i class="large mdi-image-edit"></i></a></li> 
-		<li id="btnErase" class="tooltipped" data-position="left" data-delay="5" data-tooltip="Eliminar"><a class="btn-floating red"><i class="large mdi-action-delete"></i></a></li> 
+		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Añadir"><a  id="btnAdd" onclick="dumpSelectedItems()" class="btn-floating green"><i class="large mdi-social-group-add"></i></a></li>
+		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Editar"><a id="btnEdit"  class="btn-floating yellow darken-1"><i class="large mdi-image-edit"></i></a></li> 
+		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Eliminar"><a id="btnErase" class="btn-floating red"><i class="large mdi-action-delete"></i></a></li> 
     </ul>
   </div>

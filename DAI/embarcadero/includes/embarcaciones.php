@@ -75,12 +75,12 @@
 			//var_dump($aux);
 			foreach ($aux as $key => $value) {
 				$tableData .= '<tr><td>';
-
+				if($newRow == 0) $newRow = 1;
 				foreach ($aux[$key] as $clave => $valor) {
 
-					if($newRow){
-						$tableData .= '<input type="checkbox" id="id_'.$aux[$key][$clave].'" />
-      									<label for="id_'.$aux[$key][$clave].'"></label></td>';
+					if($newRow == 1){
+						$tableData .= '<input type="checkbox" id="'.$aux[$key][$clave].'" />&nbsp;&nbsp;&nbsp;
+      									<label for="'.$aux[$key][$clave].'"></label></td>';
       					$newRow = 0;
 					}
 
@@ -97,11 +97,11 @@
 						if($clave != 'fotografia')
 							$tableData .= '<td class="tr-left">'.$valor.'</td>';
 						else
-							$tableData .= '<td class="tr-left"><img class="responsive-img" src="img/profiles/'.$valor.'"></td>';
+							$tableData .= '<td class="tr-left center"><img class=" materialboxed responsive-img"  width="50" src="img/profiles/'.$valor.'"></td>';
 					}
 					
 				}
-				$newRow = 0;
+				
 				$tableData .= '</tr>';
 			}
 

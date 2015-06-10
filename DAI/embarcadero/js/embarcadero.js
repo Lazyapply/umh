@@ -1,25 +1,59 @@
+DEBUG_MODE_ON = 1;
+
+
+
+
 $(document).ready(function(){
 	//modallogin
 	$('.modal-trigger').leanModal();
 
 
-	 //start footer
-		var bodyHeight = $("body").height();
-		var vwptHeight = $(window).height();
-		if (vwptHeight > bodyHeight) {
-		$("footer#colophon").css("position","absolute").css("bottom",0).css("width","100%");
-		}
-	//end footer
-
 });
 
+function o(valor){ (DEBUG_MODE_ON) ? console.log(valor) : false; }
 
-function employeeAdd(){
-	console.log("Entrando");
-	var pattern = '^id_+.[A-Z]{2,4}$'; 
-	$('input').each(function(){
-     if( $(this).attr('id').match(pattern) ) {
-          console.log("encontrado");
-     }
-  });
+//----- START AJAX ------------------------------------------------
+
+
+function getAjax(){
+
+	var obj;
+
+	if(window.XMLHttpRequest){
+		obj = new XMLHttpRequest();
+	}
+	else{
+		try{
+			obj = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		catch (e){
+			alert("Este navegador no es compatible con AJAX");
+		}
+	}
+
+	return obj;
 }
+
+var oXML = getAjax();
+
+function addAjaxData(target, data){
+	document.getElementById(target).innerHTML = data;
+}
+
+function getAjaxHandler(target){
+	switch(oXML.readyState){
+
+		case 2:
+		case 3:
+			addAjaxData(target, '<img id="preloader" class="loader-little centered" src="/img/preloader.gif" alt="loader"/>');
+		break;
+
+		case 4:
+			addAjaxData(target, oXML.responseText);
+			
+		break;
+	}
+
+}
+
+//----- END AJAX ------------------------------------------------

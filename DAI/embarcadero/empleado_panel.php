@@ -40,9 +40,12 @@
       </div>
     </div>
   </main>
-   <?php require_once 'components/footer.html'; ?>
+   <?php require_once 'components/footer.html';?>
+
    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/multipleSelectedItems.js"></script>
 <script type="text/javascript" src="js/embarcadero.js"></script>
+
     </body>
   </html>
