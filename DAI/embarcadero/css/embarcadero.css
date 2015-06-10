@@ -12,8 +12,13 @@ main {
 	max-height: 1px !important;
 }
 
-#profile-pic{
-	height: 4px !important;
+.profile-name{
+	margin-right: 20px;
 
 }
+.tr-left{
+  border-left: 1px solid #d0d0d0;
+}
+
+
 

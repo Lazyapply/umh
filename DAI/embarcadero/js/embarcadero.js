@@ -12,3 +12,14 @@ $(document).ready(function(){
 	//end footer
 
 });
+
+
+function employeeAdd(){
+	console.log("Entrando");
+	var pattern = '^id_+.[A-Z]{2,4}$'; 
+	$('input').each(function(){
+     if( $(this).attr('id').match(pattern) ) {
+          console.log("encontrado");
+     }
+  });
+}

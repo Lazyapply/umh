@@ -9,21 +9,21 @@
         <li><a href="empleado_panel.php"><i class="mdi-social-people left"></i>Empleados</a></li>
         <?php @session_start(); ?>
         <?php if(!empty($_SESSION)): ?>
-        <li>
-          <div class="align-wrapper">
-            <a class="valign" href="includes/logOut.php">
-            <img id="profile-pic" class="profile-pic" src="img/profiles/foto.jpg" alt="ds">
+        <li class="profile-pic">
+          <!--<div  style="max-height: 40px; margin-top: 1em;">-->
+            <a class="align-wrapper " href="includes/logOut.php">
+           <!-- <img  class="valign responsive-img" style="max-height: 40px;" src="img/profiles/foto.jpg" alt="ds"-->
       
         <?php 
-          /*@session_start();
+          @session_start();
 
           
-          echo '<img class="valign" style="max-height: 40px;" src="img/profiles/'.$_SESSION['userPhoto'].'" alt="profile_pic">';
+          echo ' <img  class="valign responsive-img profile-name" style="max-height: 40px; margin-top:1em; padding-right=1em" src="img/profiles/'.$_SESSION['userPhoto'].'" alt="profile_pic">';
 
 
-          echo $_SESSION['userName']; */
+          echo "<div class=\"valign right profile-name\" >".$_SESSION['userName']; 
 
-          ?> <span class="valign">- Logout</span></a></div></li>
+          ?> - Logout</div></a><!--</div>--></li>
 
         <?php else: ?>
         <li><a class="modal-trigger" href="#modalLogin"><i class="mdi-social-person left"></i>Login</a></li>

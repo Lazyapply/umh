@@ -53,10 +53,11 @@
 
 		public function listTableData($table){
 			
+			$tableData = '';
 
 			switch ($table) {
 				case EMPLOYEES:
-					$q = "SELECT idEmpleado, Tipo, DNI, Nombre, Apellido1, Apellido2, Direccion, CP, Poblacion, Provincia, Telefono E-mail, usuario FROM empleados";
+					$q = "SELECT id_Empleado, Tipo, DNI, CONCAT(Nombre, \" \", Apellido1, \" \", Apellido2), Direccion, CP, Poblacion, Provincia, Telefono, Email, usuario, fotografia FROM empleados";
 				break;
 				
 				default:
@@ -64,13 +65,47 @@
 				break;
 			}
 
+
+			$this->clearRows();
 			$this->setQuery($q);
 			$this->get_results_from_query();
 			$aux = $this->getRows();
+			$newRow = 1;
 
-			var_dump($aux);
+			//var_dump($aux);
+			foreach ($aux as $key => $value) {
+				$tableData .= '<tr><td>';
 
-			echo 'Q-> '.$q;
+				foreach ($aux[$key] as $clave => $valor) {
+
+					if($newRow){
+						$tableData .= '<input type="checkbox" id="id_'.$aux[$key][$clave].'" />
+      									<label for="id_'.$aux[$key][$clave].'"></label></td>';
+      					$newRow = 0;
+					}
+
+					if($clave == 'Tipo'){
+						if($valor == 1){
+							$tableData .= '<td class="tr-left">Admin</td>';
+						}
+						else{
+							$tableData .= '<td class="tr-left">Empleado</td>';
+						}
+						
+					}
+					else{
+						if($clave != 'fotografia')
+							$tableData .= '<td class="tr-left">'.$valor.'</td>';
+						else
+							$tableData .= '<td class="tr-left"><img class="responsive-img" src="img/profiles/'.$valor.'"></td>';
+					}
+					
+				}
+				$newRow = 0;
+				$tableData .= '</tr>';
+			}
+
+			return $tableData;
 
 		}
 	}
