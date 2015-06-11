@@ -8,13 +8,13 @@
   <html>
    <?php require_once 'components/header.html' ?>
 
-    <body>
+    <body >
     
     <header>
       <?php require_once 'components/navBar.html'; ?>
     </header>
     
-
+  <!-- <?php $myEmbarcaciones->o(EMPLOYEES.DS); ?> -->
     <main>
     <div class="container">
       <div class="row">
@@ -23,9 +23,7 @@
           <?php if(!empty($_SESSION)): ?>
             <div class="col s12 warning">
               <div id="employeeContent">
-              <?php 
-                require_once 'components/list_employees.php';
-              ?>
+              <?php require_once 'components/employee/list_employees.php'; ?>
               </div>
             </div>
           <?php else: ?>

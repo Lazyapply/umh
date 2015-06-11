@@ -1,6 +1,6 @@
 <?php 
 
-	require_once 'includes/embarcaciones.php';
+	require_once '/includes/embarcaciones.php';
 
 	
 	$myEmbarcaciones = new Embarcaciones();
@@ -9,6 +9,7 @@
 
 ?>
 
+ 	
 <table class="hoverable">
 	<caption class="right-align"><h5>Empleados</h5></caption>
 	<thead>
@@ -41,8 +42,12 @@
       <i class="large mdi-editor-mode-edit"></i>
     </a>
     <ul>
-		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Añadir"><a  id="btnAdd" onclick="dumpSelectedItems()" class="btn-floating green"><i class="large mdi-social-group-add"></i></a></li>
+		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Añadir"><a  id="btnAdd" onclick="loadAdd('employee')" class="btn-floating green"><i class="large mdi-social-group-add"></i></a></li>
 		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Editar"><a id="btnEdit"  class="btn-floating yellow darken-1"><i class="large mdi-image-edit"></i></a></li> 
-		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Eliminar"><a id="btnErase" class="btn-floating red"><i class="large mdi-action-delete"></i></a></li> 
+		<li class="tooltipped" data-position="left" data-delay="5" data-tooltip="Eliminar"><a id="btnErase" onclick="loadErase('employee')" class="btn-floating red"><i class="large mdi-action-delete"></i></a></li> 
     </ul>
   </div>
+
+  
+
+ 

@@ -33,6 +33,7 @@ $(document).ready(function(){
 	//buttons
 	checkButtons();
 
+
 	//start footer
 	var bodyHeight = $("body").height();
 	var vwptHeight = $(window).height();
@@ -50,16 +51,19 @@ $(document).ready(function(){
 		// o(checked);
 		if(checked){
 			if(selectedItems.indexOf(id) == -1){
+				o('in ' + id);
 				selectedItems.push(id);
 				totalElements = selectedItems.length;
-				o('in ' + id);
+				
 			}
 
 		}
 		else{
-			selectedItems.pop(id);
-			totalElements = selectedItems.length;
-			o('out ' + id);
+				o('out ' + id);
+				selectedItems.pop(id);
+				totalElements = selectedItems.length;
+				
+			
 		}
 
 		checkButtons();
@@ -93,7 +97,7 @@ function checkButtons(){
 function o(valor){ (DEBUG_MODE_ON) ? console.log(valor) : false; }
 
 function dumpSelectedItems(){ 
-	totalElements = selectedItems.length;
+	// totalElements = selectedItems.length;
 	o("dump SelectedItems: " + totalElements);
 	o("------------------------------");
 	for(i=0;i<totalElements;i++){

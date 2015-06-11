@@ -1,16 +1,105 @@
 DEBUG_MODE_ON = 1;
 
-
+var btnAdd = document.getElementById("btnAdd");
+var btnEdit = document.getElementById("btnEdit");
+var btnErase = document.getElementById("btnErase");
 
 
 $(document).ready(function(){
 	//modallogin
 	$('.modal-trigger').leanModal();
+	//slide
+	$('.slider').slider({full_width: true});
+
+	
 
 
 });
 
 function o(valor){ (DEBUG_MODE_ON) ? console.log(valor) : false; }
+// sp?name1=value1&name2=value2
+function loadErase(target){
+	var location;
+
+	switch (target){
+
+		case 'employee':
+			location = 'components/processDB.php' + constructGET(target, 'erase');;
+		break;
+
+
+
+	}
+	o(location);
+	window.location.assign(location);
+	// oXML.open('GET', location);
+	
+	// oXML.onreadystatechange = function(){
+	// 	getAjaxHandler('employeeContent');
+	// };
+
+	// oXML.send();
+	
+}
+
+function constructGET(target, action){
+	var q = '?from='+target+'&action='+action ;
+	for(i=0;i<totalElements;i++){
+			q = q + '&id'+ i + "=" + selectedItems[i];
+	}
+
+	return q;
+}
+//start dynamic
+
+//add
+function loadAdd(target){
+	var location;
+
+	switch (target){
+
+		case 'employee':
+			location = 'components/employee/add_employees.php';
+		break;
+
+
+
+	}
+
+	oXML.open('GET', location);
+	
+	oXML.onreadystatechange = function(){
+		getAjaxHandler('employeeContent');
+	};
+
+	oXML.send();
+}
+
+//list
+function loadList(target){
+	var location;
+
+	switch (target){
+
+		case 'employee':
+			location = 'components/employee/list_employees.php';
+		break;
+
+		
+
+	}
+
+	oXML.open('GET', location);
+	
+	oXML.onreadystatechange = function(){
+		getAjaxHandler('employeeContent');
+	};
+
+	oXML.send();
+}
+
+
+//end dynamic
 
 //----- START AJAX ------------------------------------------------
 
@@ -45,7 +134,7 @@ function getAjaxHandler(target){
 
 		case 2:
 		case 3:
-			addAjaxData(target, '<img id="preloader" class="loader-little centered" src="/img/preloader.gif" alt="loader"/>');
+			addAjaxData(target, '<img id="preloader" class="loader-little centered" src="img/preloader.gif" alt="loader"/>');
 		break;
 
 		case 4:
