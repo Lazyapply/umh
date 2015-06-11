@@ -15,19 +15,36 @@
 		$action = $_GET['action'];
 		unset($_GET['from']);
 		unset($_GET['action']);
+
+		if(!empty($_GET['id'])){
+			$id = $_GET['id'];
+			unset($_GET['id']);
+		}
+
+
 		// var_dump($_GET);
 	}
 	// echo $from.'<br>';
 
 	switch ($from) {
 		case EMPLOYEE:
+		echo $action;
 			switch ($action) {
 				case ADD:
-					$myEmbarcaciones->add(EMPLOYEE, $_POST);
+					$myEmbarcaciones->add($from, $_POST);
 					break;
 
 				case ERASE:
-					$myEmbarcaciones->erase(EMPLOYEE, $_GET);
+					$myEmbarcaciones->erase($from, $_GET);
+					break;
+
+				case EDIT:
+					$myEmbarcaciones->edit($from, $id);
+					break;
+
+				case UPDATE:
+					 $myEmbarcaciones->update($from, $_POST);
+					 
 					break;
 				
 				default:

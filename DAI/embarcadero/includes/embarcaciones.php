@@ -124,6 +124,55 @@
 			
 		}
 
+		public function edit($target, $id){
+			// echo "PHP edit<br>Target: ".$target."<br>id: ".$id;
+
+			$q = "SELECT Tipo, DNI, Nombre, Apellido1, Apellido2, Direccion, CP,
+			 Poblacion, Provincia, Telefono, Email, Usuario, Password, fotografia
+			 FROM empleados WHERE id_Empleado=".$id;
+
+			 // echo '<br>'.$q.'<br>';
+			 $this->setQuery($q);
+			 $this->get_results_from_query();
+			 $aux = $this->getRows();
+			 $this->clearRows();
+			 // var_dump($aux);
+			 // echo '<br>';
+
+			foreach ($aux[0] as $key => $value) {
+				$_POST[$key] = $value;
+			}
+
+			$this->asyncJsFromPHP("loadEdit(".$id.")");
+		}
+
+		public function update($target, $data = array()){
+			$q = "UPDATE empleados SET ";
+
+			$c = 0;
+				foreach ($data as $key => $value) {
+					
+					if($key != 'id'){
+
+						if($key == 'Password')
+							$q .= "$key = '".sha1($value)."'";
+						else
+							$q .= "$key = '".addslashes($value)."'";
+
+
+						if($c < count($data) -2)
+							$q .= ', ';
+
+						$c++;
+					}
+				}
+				// echo '<br>'.$data['id'];
+				$q .= "WHERE id_Empleado=".$data['id'];
+				// echo $q;
+
+				$this->setQuery($q);
+				$this->execute_single_query();
+		}
 
 		public function add($target, $data = array()){
 			
@@ -133,7 +182,8 @@
 			switch ($target) {
 
 				case EMPLOYEE:
-					$q = "INSERT INTO empleados (Tipo, DNI, Nombre, Apellido1, Apellido2, Direccion, CP, Poblacion, Provincia, Telefono, Email, Usuario, Password, fotografia)
+				
+					$q = "INSERT INTO empleados (Nombre, Tipo, DNI, Apellido1,  Poblacion, Provincia, Apellido2, CP, Telefono, Direccion, Email, Usuario, Password, fotografia)
 						VALUES(";
 				break;
 				
@@ -142,14 +192,20 @@
 					break;
 			}
 
-			
+			$this->o($q);
 			var_dump($data);
 			echo '<br>';
 
 			//start construct query
 				$c = 0;
 				foreach ($data as $key => $value) {
-					$q .= "'".$value."'";
+					
+					if($key == 'Password')
+						$q .= "'".sha1($value)."'";
+					else
+						$q .= "'".addslashes($value)."'";
+
+
 					if($c < count($data) -1)
 						$q .= ', ';
 

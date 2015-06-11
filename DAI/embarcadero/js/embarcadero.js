@@ -30,23 +30,52 @@ function loadErase(target){
 
 
 	}
-	o(location);
+	// o(location);
 	window.location.assign(location);
-	// oXML.open('GET', location);
-	
-	// oXML.onreadystatechange = function(){
-	// 	getAjaxHandler('employeeContent');
-	// };
+}
 
-	// oXML.send();
+
+function loadEdit(target){
+	var location;
+
+	switch (target){
+
+		case 'employee':
+			location = 'components/employee/edit_employees.php' + constructGET(target, 'edit');
+			// location = 'components/processDB.php' + constructGET(target, 'edit');
+		break;
+
+
+
+	}
+	o(location);
+	// window.location.assign(location);
+	oXML.open('GET', location);
 	
+	oXML.onreadystatechange = function(){
+		getAjaxHandler('employeeContent');
+	};
+
+	oXML.send();
 }
 
 function constructGET(target, action){
 	var q = '?from='+target+'&action='+action ;
-	for(i=0;i<totalElements;i++){
-			q = q + '&id'+ i + "=" + selectedItems[i];
+
+	switch(action){
+		case 'erase':
+			for(i=0;i<totalElements;i++){
+				q = q + '&id'+ i + "=" + selectedItems[i];
+			}
+
+		break;
+
+		case 'edit':
+			q = q + '&id=' + selectedItems.pop();
+				
+		break;
 	}
+	
 
 	return q;
 }

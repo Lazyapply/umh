@@ -18,5 +18,6 @@
 	define('ADD',  			'add');
 	define('EDIT',  		'edit');
 	define('ERASE',  		'erase');
+	define('UPDATE',  		'update');
 	
  ?>
